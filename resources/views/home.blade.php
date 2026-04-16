@@ -1,389 +1,553 @@
 @extends('layouts.app')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 @section('title', 'Government Postgraduate College Mansehra - Excellence in Education')
 
+@push('styles')
+<style>
+/* ══════════════════════════════════════════
+   1. BANNER SLIDER  (full-width, UOH exact)
+══════════════════════════════════════════ */
+.banner-section { width:100%; overflow:hidden; background:#0a1e10; }
+.banner-swiper  { width:100%; height:clamp(200px,30vw,500px); }
+.banner-swiper .swiper-slide a { display:block; width:100%; height:100%; }
+.banner-swiper .swiper-slide img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; transition:transform 7s ease; }
+.banner-swiper .swiper-slide-active img { transform:scale(1.04); }
+.banner-swiper .swiper-button-next,
+.banner-swiper .swiper-button-prev { width:38px; height:38px; background:rgba(0,0,0,.5); border-radius:3px; color:#fff; }
+.banner-swiper .swiper-button-next:hover,
+.banner-swiper .swiper-button-prev:hover { background:rgba(0,66,40,.85); }
+.banner-swiper .swiper-button-next::after,
+.banner-swiper .swiper-button-prev::after { font-size:15px; font-weight:700; }
+.banner-swiper .swiper-pagination-bullet { width:10px; height:10px; background:rgba(255,255,255,.6); opacity:1; }
+.banner-swiper .swiper-pagination-bullet-active { background:#c8930a; width:28px; border-radius:5px; }
+.slide-cap { position:absolute; bottom:0; left:0; right:0; padding:24px 32px 16px; background:linear-gradient(to top,rgba(10,30,16,.85) 0%,transparent 100%); color:#fff; pointer-events:none; }
+.slide-cap .ctag { display:inline-block; background:#c8930a; color:#fff; font-size:10px; font-weight:700; padding:2px 10px; border-radius:3px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:5px; }
+.slide-cap h4 { font-family:'Playfair Display',serif; font-size:clamp(13px,1.6vw,20px); font-weight:700; color:#fff; margin:0; line-height:1.3; }
+
+/* ══════════════════════════════════════════
+   2. NEWS TICKER  (below slider — exactly like UOH)
+══════════════════════════════════════════ */
+.news-ticker-bar {
+    background:#fff;
+    border-top:1px solid #ddd;
+    border-bottom:2px solid #0b6a7c;
+    padding:8px 0;
+    overflow:hidden;
+}
+.ticker-wrap { max-width:1280px; margin:auto; padding:0 20px; display:flex; align-items:center; gap:0; }
+.ticker-lbl {
+    background:#c8930a; color:#fff; font-size:11px; font-weight:700;
+    padding:4px 12px; border-radius:3px; text-transform:uppercase;
+    letter-spacing:.07em; flex-shrink:0; margin-right:16px; white-space:nowrap;
+}
+.ticker-scroll { overflow:hidden; flex:1; }
+.ticker-inner { display:flex; gap:50px; animation:scroll-ticker 35s linear infinite; white-space:nowrap; font-size:13px; color:#1a3a5c; font-weight:500; }
+.ticker-inner span { display:flex; align-items:center; gap:6px; }
+.ticker-inner span .tnew { color:red; font-weight:800; font-size:11px; }
+@keyframes scroll-ticker { 0%{transform:translateX(0);}100%{transform:translateX(-50%);} }
+
+/* ══════════════════════════════════════════
+   3. ICON GRID  (UOH exact — 6 icons in white boxes)
+══════════════════════════════════════════ */
+.icon-section { background:#f5f5f5; padding:28px 0; border-bottom:1px solid #ddd; }
+.icon-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:16px; }
+.icon-box {
+    background:#fff; border:1px solid #ddd; text-align:center;
+    padding:18px 12px; border-radius:6px; text-decoration:none;
+    transition:all .25s; display:flex; flex-direction:column; align-items:center; gap:10px;
+    color:#1a3a5c;
+}
+.icon-box:hover { transform:translateY(-5px); box-shadow:0 8px 24px rgba(0,0,0,.1); border-color:#0b6a7c; }
+.icon-box .ibox-img {
+    width:80px; height:80px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-size:32px;
+    background:#e8f5ee; border:2px solid #c8d8e8; transition:background .25s;
+}
+.icon-box:hover .ibox-img { background:#0b6a7c; color:#fff; }
+.icon-box p { font-size:13px; font-weight:700; color:#0b6a7c; margin:0; }
+.icon-box:hover p { color:#0b6a7c; }
+
+/* ══════════════════════════════════════════
+   4. BANNER GRID  (3 promo banners like UOH)
+══════════════════════════════════════════ */
+.promo-section { padding:20px 0; background:#fff; }
+.promo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.promo-grid a { display:block; border-radius:6px; overflow:hidden; border:1px solid #ddd; transition:all .25s; }
+.promo-grid a:hover { box-shadow:0 6px 20px rgba(0,0,0,.15); transform:translateY(-2px); }
+.promo-grid img { width:100%; height:160px; object-fit:cover; display:block; transition:transform .4s; }
+.promo-grid a:hover img { transform:scale(1.04); }
+
+/* ══════════════════════════════════════════
+   5. INFO SECTION  (VC + Highlights + News — exactly like screenshot 2)
+══════════════════════════════════════════ */
+.info-section { background:#f4f4f4; padding:28px 0; }
+.info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.info-card { background:#fff; border:1px solid #ddd; border-radius:4px; overflow:hidden; }
+.info-hdr {
+    background:#0b6a7c; color:#fff; padding:11px 16px;
+    font-weight:700; font-size:13.5px; text-align:center;
+    letter-spacing:.05em; text-transform:uppercase;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.info-hdr a { color:#ffd700; font-size:12px; font-weight:600; text-decoration:none; margin-left:auto; }
+.info-hdr a:hover { text-decoration:underline; }
+.info-body { padding:14px 16px; }
+
+/* VC card */
+.vc-row { display:flex; gap:14px; align-items:flex-start; }
+.vc-photo { width:100px; height:120px; object-fit:cover; flex-shrink:0; border:2px solid #dde; }
+.vc-text { font-size:13px; line-height:1.7; color:#444; text-align:justify; }
+.vc-text a { color:#0b6a7c; font-weight:600; text-decoration:none; }
+.vc-text a:hover { text-decoration:underline; }
+
+/* Highlights & News list */
+.info-list { list-style:none; padding:0; margin:0; }
+.info-list li {
+    padding:9px 4px; border-bottom:1px dashed #ccc;
+    font-size:13px; color:#222; line-height:1.45;
+    display:flex; gap:6px; align-items:flex-start;
+}
+.info-list li:last-child { border-bottom:none; }
+.info-list li .new-tag { color:red; font-weight:800; font-size:11px; flex-shrink:0; margin-top:2px; }
+.info-list li .arr { color:#0b6a7c; flex-shrink:0; margin-top:2px; }
+.info-list li a { color:#1a3a5c; text-decoration:none; font-weight:600; transition:color .2s; }
+.info-list li a:hover { color:#0b6a7c; text-decoration:underline; }
+.news-date { font-size:11px; color:#888; display:block; margin-top:2px; }
+
+/* ══════════════════════════════════════════
+   6. STATS STRIP  (dark blue glow — screenshot 3 exact)
+══════════════════════════════════════════ */
+.stats-section {
+    background:linear-gradient(135deg,#071e3d 0%,#0b3c5d 40%,#1c5d85 70%,#0b3c5d 100%);
+    padding:40px 0; margin:0;
+}
+.stats-grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.stat-box {
+    background:rgba(255,255,255,.06); border:1.5px solid rgba(255,255,255,.18);
+    border-radius:12px; padding:30px 16px; text-align:center; color:#fff;
+    backdrop-filter:blur(6px); transition:all .3s;
+    box-shadow:0 0 20px rgba(0,200,255,.08);
+}
+.stat-box:hover { transform:translateY(-6px) scale(1.02); box-shadow:0 0 30px rgba(0,200,255,.25); border-color:rgba(255,255,255,.35); }
+.stat-box i { font-size:38px; color:#4af0a0; margin-bottom:12px; display:block; }
+.stat-box .s-num { font-family:'Playfair Display',serif; font-size:36px; font-weight:800; color:#fff; line-height:1; margin-bottom:8px; }
+.stat-box .s-lbl { font-size:12px; letter-spacing:2px; font-weight:700; color:rgba(255,255,255,.6); text-transform:uppercase; }
+
+/* ══════════════════════════════════════════
+   7. QUOTE + ABOUT LINKS  (screenshot 4 exact)
+══════════════════════════════════════════ */
+.quote-section {
+    background:#f8f8f8; padding:36px 0;
+    border-top:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0;
+}
+.quote-card {
+    display:flex; gap:24px; align-items:flex-start;
+    background:#fff; border:1px solid #ddd; border-radius:8px;
+    padding:24px 28px; max-width:1100px; margin:0 auto;
+}
+.quote-icon-circle {
+    width:90px; height:90px; border-radius:50%;
+    background:#1a3a6c; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; color:#fff; font-size:36px;
+}
+.quote-body { font-size:13.5px; color:#333; line-height:1.8; text-align:justify; }
+.quote-body strong { font-style:italic; }
+.quote-body .q-source { display:block; margin-top:10px; font-style:italic; font-weight:700; color:#333; font-size:13px; }
+
+/* About links row (5 circles) */
+.about-links-section { background:#fff; padding:40px 0 44px; }
+.about-circles { display:flex; justify-content:center; align-items:flex-end; gap:0; position:relative; }
+.about-circles::before {
+    content:''; position:absolute; top:50%; left:10%; right:10%;
+    height:2px; background:#cdd; z-index:0; transform:translateY(-200%);
+}
+.about-circle-item { display:flex; flex-direction:column; align-items:center; gap:14px; text-decoration:none; flex:1; position:relative; z-index:1; }
+.about-circle-item .circle-icon {
+    width:100px; height:100px; border-radius:50%;
+    background:#1a3a6c; display:flex; align-items:center; justify-content:center;
+    font-size:36px; color:#fff; transition:all .3s;
+    border:4px solid #fff; box-shadow:0 4px 16px rgba(26,58,108,.25);
+}
+.about-circle-item:hover .circle-icon { background:#0b6a7c; transform:translateY(-6px) scale(1.05); box-shadow:0 8px 28px rgba(11,106,124,.35); }
+.about-circle-item span { font-size:12px; font-weight:800; color:#1a3a6c; text-transform:uppercase; letter-spacing:.06em; text-align:center; line-height:1.3; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:1024px) {
+    .icon-grid { grid-template-columns:repeat(3,1fr); }
+    .promo-grid { grid-template-columns:repeat(2,1fr); }
+    .stats-grid-4 { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:768px) {
+    .info-grid { grid-template-columns:1fr; }
+    .icon-grid { grid-template-columns:repeat(3,1fr); }
+    .about-circles { flex-wrap:wrap; gap:20px; }
+    .about-circle-item { flex:none; width:30%; }
+    .stats-grid-4 { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:480px) {
+    .icon-grid { grid-template-columns:repeat(2,1fr); }
+    .promo-grid { grid-template-columns:1fr; }
+    .about-circle-item { width:45%; }
+}
+</style>
+@endpush
+
 @section('content')
 
-<!-- ── HERO ── -->
-<section class="hero">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-glow-left"></div>
-    <div class="hero-glow-right"></div>
-    <div class="hero-stripe"></div>
-    <div class="hero-content">
-        <div data-aos="fade-right">
-            <div class="hero-badge">🎓 HEC Recognized Institution</div>
-            <h1 class="hero-title">
-                Shaping
-                <span>Future Leaders</span>
-                of Pakistan
-            </h1>
-            <p class="hero-desc">
-                Government Postgraduate College Mansehra — a premier institution
-                dedicated to academic excellence, research, and developing well-rounded
-                professionals since 1957.
-            </p>
-            <div class="hero-actions">
-                <a href="#programs" class="btn-primary">Explore Programs</a>
-                <a href="#about" class="btn-outline-w">Learn More</a>
-            </div>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="num">65+</div>
-                    <div class="lbl">Years of Excellence</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="num">15K+</div>
-                    <div class="lbl">Alumni Worldwide</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="num">27+</div>
-                    <div class="lbl">Departments</div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-card" data-aos="fade-left">
-            <h3>Start Your Application</h3>
-            <p class="sub">Admissions open — Apply today</p>
-            <div class="form-field">
-                <label>Full Name</label>
-                <input type="text" placeholder="Muhammad Ali">
-            </div>
-            <div class="form-field">
-                <label>CNIC / B-Form No.</label>
-                <input type="text" placeholder="XXXXX-XXXXXXX-X">
-            </div>
-            <div class="form-field">
-                <label>Program of Interest</label>
-                <select>
-                    <option>Select Program</option>
-                    <option>BS Computer Science</option>
-                    <option>BS Mathematics</option>
-                    <option>BS Physics</option>
-                    <option>BS Chemistry</option>
-                    <option>BS English</option>
-                    <option>BS Economics</option>
-                    <option>BS Political Science</option>
-                    <option>BS Zoology</option>
-                    <option>BS Botany</option>
-                </select>
-            </div>
-            <div class="form-field">
-                <label>Phone Number</label>
-                <input type="text" placeholder="+92 3XX XXXXXXX">
-            </div>
-            <button class="btn-submit">Submit Application →</button>
-        </div>
-    </div>
-</section>
+{{-- ══════════════════════════════════════════
+     1. FULL-WIDTH BANNER SLIDER
+══════════════════════════════════════════ --}}
+<div class="banner-section">
+    <div class="swiper banner-swiper">
+        <div class="swiper-wrapper">
 
-<!-- ── TICKER ── -->
-<div class="ticker">
-    <div class="ticker-inner">
-        <div class="ticker-label">📢 Latest</div>
-        <div class="ticker-track">
-            <div class="ticker-text">
-                <span>🎓 Admissions Open for Fall 2025 — Apply Before 30th August</span>
-                <span>🏆 College Wins Best Institution Award 2024 from Government of KP</span>
-                <span>📚 New BS Artificial Intelligence Program Launched</span>
-                <span>🎓 Convocation Ceremony Scheduled for November 2025</span>
-                <span>🔬 Research Grant of Rs. 10 Million Received from HEC</span>
-                <span>🌍 International Conference on Climate Change Announced</span>
-                <span>🎓 Admissions Open for Fall 2025 — Apply Before 30th August</span>
-                <span>🏆 College Wins Best Institution Award 2024 from Government of KP</span>
-                <span>📚 New BS Artificial Intelligence Program Launched</span>
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&h=500&fit=crop&crop=top" alt="Admissions">
+                    <div class="slide-cap">
+                        <div class="ctag">Admissions Open</div>
+                        <h4>Fall 2025 Admissions — Apply Now Before Seats Fill Up!</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="https://images.unsplash.com/photo-1627556704302-624286467c65?w=1600&h=500&fit=crop&crop=top" alt="Convocation">
+                    <div class="slide-cap">
+                        <div class="ctag">Event</div>
+                        <h4>5th Annual Convocation — Over 2,000 Graduates Celebrated</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=1600&h=500&fit=crop&crop=center" alt="KP Govt">
+                    <div class="slide-cap">
+                        <div class="ctag">Achievement</div>
+                        <h4>College Achieves Record QEC Score of 86.69 in 2024–25 Evaluation</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1600&h=500&fit=crop&crop=center" alt="Research">
+                    <div class="slide-cap">
+                        <div class="ctag">Research</div>
+                        <h4>HEC Research Grant of Rs. 10 Million — Advancing Science at GPGCM</h4>
+                    </div>
+                </a>
+            </div>
+
+            <div class="swiper-slide">
+                <a href="#">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&h=500&fit=crop&crop=top" alt="Campus">
+                    <div class="slide-cap">
+                        <div class="ctag">Campus</div>
+                        <h4>On-Campus Physical Classes Resume — Full Academic Activities Restored</h4>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+{{-- ══════════════════════════════════════════
+     2. NEWS TICKER  (below slider — like UOH red-tagged scroll)
+══════════════════════════════════════════ --}}
+<div class="news-ticker-bar">
+    <div class="ticker-wrap">
+        <div class="ticker-lbl">📢 Latest News</div>
+        <div class="ticker-scroll">
+            <div class="ticker-inner">
+                <span><span class="tnew">New</span> Registrar Office Notification regarding On-Campus Physical Classes from 6th April 2026</span>
+                <span><span class="tnew">New</span> Admissions Open for Fall 2025 — Apply Before 30th August</span>
+                <span><span class="tnew">New</span> College Achieves Record QEC Score of 86.69 in 2024–25 Evaluation</span>
+                <span><span class="tnew">New</span> HEC Research Grant of Rs. 10 Million Received</span>
+                <span><span class="tnew">New</span> 5th Convocation Ceremony — Degrees Distributed to 2000+ Graduates</span>
+                <span><span class="tnew">New</span> New BS Artificial Intelligence Program Launched for Fall 2025</span>
+                {{-- Duplicate for seamless loop --}}
+                <span><span class="tnew">New</span> Registrar Office Notification regarding On-Campus Physical Classes from 6th April 2026</span>
+                <span><span class="tnew">New</span> Admissions Open for Fall 2025 — Apply Before 30th August</span>
+                <span><span class="tnew">New</span> College Achieves Record QEC Score of 86.69 in 2024–25 Evaluation</span>
+                <span><span class="tnew">New</span> HEC Research Grant of Rs. 10 Million Received</span>
+                <span><span class="tnew">New</span> 5th Convocation Ceremony — Degrees Distributed to 2000+ Graduates</span>
+                <span><span class="tnew">New</span> New BS Artificial Intelligence Program Launched for Fall 2025</span>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ── QUICK LINKS ── -->
-<section class="ql-section">
+{{-- ══════════════════════════════════════════
+     3. ICON GRID  (6 boxes — exactly Screenshot 1 top row)
+══════════════════════════════════════════ --}}
+<section class="icon-section">
     <div class="container">
-        <div class="qlinks-grid">
-            <a href="#" class="qlink" data-aos="fade-up" data-aos-delay="0">
-                <div class="qlink-icon">📋</div><span>Admissions</span>
+        <div class="icon-grid">
+            <a href="#" class="icon-box">
+                <div class="ibox-img">🖼️</div>
+                <p>GPM Gallery</p>
             </a>
-            <a href="#" class="qlink" data-aos="fade-up" data-aos-delay="40">
-                <div class="qlink-icon">📊</div><span>Results</span>
+            <a href="#" class="icon-box">
+                <div class="ibox-img">🔗</div>
+                <p>Important Links</p>
             </a>
-            <a href="#" class="qlink" data-aos="fade-up" data-aos-delay="80">
-                <div class="qlink-icon">📅</div><span>Date Sheet</span>
+            {{-- <a href="{{ route('student-portal') }}" class="icon-box"> --}}
+                <div class="ibox-img">🖥️</div>
+                <p>GPM Portals</p>
             </a>
-            <a href="#" class="qlink" data-aos="fade-up" data-aos-delay="120">
-                <div class="qlink-icon">💰</div><span>Fee Structure</span>
+            <a href="#" class="icon-box">
+                <div class="ibox-img">📋</div>
+                <p>GPM Tenders</p>
             </a>
-            <a href="#" class="qlink" data-aos="fade-up" data-aos-delay="160">
-                <div class="qlink-icon">🎓</div><span>Scholarship</span>
+            <a href="#" class="icon-box">
+                <div class="ibox-img">👶</div>
+                <p>Day Care Center</p>
             </a>
-            <a href="#" class="qlink" data-aos="fade-up" data-aos-delay="200">
-                <div class="qlink-icon">📚</div><span>Library</span>
-            </a>
-            <a href="#" class="qlink" data-aos="fade-up" data-aos-delay="240">
-                <div class="qlink-icon">🏠</div><span>Hostel</span>
-            </a>
-            <a href="#" class="qlink" data-aos="fade-up" data-aos-delay="280">
-                <div class="qlink-icon">📞</div><span>Contact Us</span>
+            <a href="#" class="icon-box">
+                <div class="ibox-img">♿</div>
+                <p>DRC-GPM</p>
             </a>
         </div>
     </div>
 </section>
 
-<!-- ── PROGRAMS ── -->
-<section class="programs-section" id="programs">
+{{-- ══════════════════════════════════════════
+     4. PROMO BANNERS  (3 banners — Screenshot 1 bottom row)
+══════════════════════════════════════════ --}}
+<section class="promo-section">
     <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <div class="section-tag">Academic Programs</div>
-            <h2 class="section-title">Choose Your Path to Success</h2>
-            <p class="section-sub">From undergraduate to postgraduate, world-class programs designed to meet the demands of the modern economy.</p>
-        </div>
-        <div class="programs-grid">
-            <a href="#" class="program-card" data-aos="fade-up" data-aos-delay="0">
-                <div class="program-card-top">
-                    <div class="program-icon" style="background:#e8f5ee;">💻</div>
-                    <h3>Computer Science & IT</h3>
-                    <p>AI, cybersecurity, software engineering, and data science with state-of-the-art labs and industry partnerships.</p>
-                </div>
-                <div class="program-card-bottom">
-                    <div class="program-meta"><strong>8</strong> Specializations &nbsp;|&nbsp; <strong>4</strong> Years</div>
-                    <div class="program-arrow">→</div>
-                </div>
+        <div class="promo-grid">
+
+            <a href="#">
+    <img src="{{ asset('images/banner1.jpg') }}" alt="Admissions Open">
+</a>
+
+            <a href="#">
+                <img src="{{ asset('images/banner2.jpg') }}" alt="Research Projects">
             </a>
-            <a href="#" class="program-card" data-aos="fade-up" data-aos-delay="60">
-                <div class="program-card-top">
-                    <div class="program-icon" style="background:#fef9ec;">📈</div>
-                    <h3>Business & Management</h3>
-                    <p>BBA and specialized programs in finance, marketing, HRM, and entrepreneurship with industry exposure.</p>
-                </div>
-                <div class="program-card-bottom">
-                    <div class="program-meta"><strong>6</strong> Specializations &nbsp;|&nbsp; <strong>4</strong> Years</div>
-                    <div class="program-arrow">→</div>
-                </div>
+
+            <a href="#">
+                <img src="{{ asset('images/banner3.jpg') }}" alt="Scholarships">
             </a>
-            <a href="#" class="program-card" data-aos="fade-up" data-aos-delay="120">
-                <div class="program-card-top">
-                    <div class="program-icon" style="background:#edf7f0;">⚗️</div>
-                    <h3>Physical Sciences</h3>
-                    <p>Physics, chemistry, and mathematics with advanced research facilities and modern laboratories.</p>
-                </div>
-                <div class="program-card-bottom">
-                    <div class="program-meta"><strong>5</strong> Disciplines &nbsp;|&nbsp; <strong>4</strong> Years</div>
-                    <div class="program-arrow">→</div>
-                </div>
-            </a>
-            <a href="#" class="program-card" data-aos="fade-up" data-aos-delay="180">
-                <div class="program-card-top">
-                    <div class="program-icon" style="background:#ecf9f2;">🌿</div>
-                    <h3>Life Sciences</h3>
-                    <p>Zoology, botany, and biotechnology programs with extensive fieldwork and research opportunities.</p>
-                </div>
-                <div class="program-card-bottom">
-                    <div class="program-meta"><strong>4</strong> Programs &nbsp;|&nbsp; <strong>4</strong> Years</div>
-                    <div class="program-arrow">→</div>
-                </div>
-            </a>
-            <a href="#" class="program-card" data-aos="fade-up" data-aos-delay="240">
-                <div class="program-card-top">
-                    <div class="program-icon" style="background:#f0f8f3;">⚖️</div>
-                    <h3>Social Sciences</h3>
-                    <p>Economics, political science, psychology, and sociology developing critical thinkers and future leaders.</p>
-                </div>
-                <div class="program-card-bottom">
-                    <div class="program-meta"><strong>7</strong> Programs &nbsp;|&nbsp; <strong>4</strong> Years</div>
-                    <div class="program-arrow">→</div>
-                </div>
-            </a>
-            <a href="#" class="program-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="program-card-top">
-                    <div class="program-icon" style="background:#eaf6ef;">📖</div>
-                    <h3>Languages & Literature</h3>
-                    <p>English, Urdu, and other language programs focusing on literature, linguistics, and communication.</p>
-                </div>
-                <div class="program-card-bottom">
-                    <div class="program-meta"><strong>4</strong> Languages &nbsp;|&nbsp; <strong>4</strong> Years</div>
-                    <div class="program-arrow">→</div>
-                </div>
-            </a>
+
         </div>
     </div>
 </section>
 
-<!-- ── STATS ── -->
-<div class="stats-strip">
+{{-- ══════════════════════════════════════════
+     5. VC + HIGHLIGHTS + NEWS  (Screenshot 2 exact)
+══════════════════════════════════════════ --}}
+<section class="info-section">
     <div class="container">
-        <div class="stats-grid">
-            <div class="stat-block" data-aos="zoom-in" data-aos-delay="0">
-                <div class="num">10,200+</div>
-                <div class="lbl">Enrolled Students</div>
-            </div>
-            <div class="stat-block" data-aos="zoom-in" data-aos-delay="60">
-                <div class="num">335+</div>
-                <div class="lbl">Faculty Members</div>
-            </div>
-            <div class="stat-block" data-aos="zoom-in" data-aos-delay="120">
-                <div class="num">27</div>
-                <div class="lbl">Departments</div>
-            </div>
-            <div class="stat-block" data-aos="zoom-in" data-aos-delay="180">
-                <div class="num">144</div>
-                <div class="lbl">Active Programs</div>
-            </div>
-        </div>
-    </div>
-</div>
+        <div class="info-grid">
 
-<!-- ── DEPARTMENTS SLIDER ── -->
-<section class="depts-section" id="departments">
-    <div class="container">
-        <div class="section-header center" data-aos="fade-up">
-            <div class="section-tag">Academic Excellence</div>
-            <h2 class="section-title">Explore Our Departments</h2>
-            <p class="section-sub">Discover world-class education across multiple disciplines with state-of-the-art facilities.</p>
-        </div>
-        <div class="swiper mySwiper" data-aos="fade-up">
-            <div class="swiper-wrapper">
-                @php
-                    $departments = [
-                        ['id'=>'cs',      'name'=>'Computer Science',  'short'=>'Innovation Through Technology', 'img'=>'https://images.unsplash.com/photo-1587620962725-abab7fe551e5?w=400&h=220&fit=crop'],
-                        ['id'=>'math',    'name'=>'Mathematics',       'short'=>'The Language of Science',       'img'=>'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=220&fit=crop'],
-                        ['id'=>'physics', 'name'=>'Physics',           'short'=>'Understanding the Universe',    'img'=>'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400&h=220&fit=crop'],
-                        ['id'=>'chem',    'name'=>'Chemistry',         'short'=>'Transforming Matter',           'img'=>'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=220&fit=crop'],
-                        ['id'=>'zoology', 'name'=>'Zoology',           'short'=>'Exploring Animal Life',         'img'=>'https://images.unsplash.com/photo-1544717305-38b3144e0a08?w=400&h=220&fit=crop'],
-                        ['id'=>'botany',  'name'=>'Botany',            'short'=>'Plant Sciences',                'img'=>'https://images.unsplash.com/photo-1536312618463-f4bda1307947?w=400&h=220&fit=crop'],
-                        ['id'=>'eng',     'name'=>'English',           'short'=>'Mastering Language',            'img'=>'https://images.unsplash.com/photo-1529101091764-c3526daf3c7a?w=400&h=220&fit=crop'],
-                        ['id'=>'eco',     'name'=>'Economics',         'short'=>'Shaping Policy & Markets',      'img'=>'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=220&fit=crop'],
-                        ['id'=>'ps',      'name'=>'Political Science', 'short'=>'Power & Governance',            'img'=>'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=220&fit=crop'],
-                        ['id'=>'urdu',    'name'=>'Urdu',              'short'=>'Literary Heritage',              'img'=>'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=220&fit=crop'],
-                        ['id'=>'stat',    'name'=>'Statistics',        'short'=>'Data & Analysis',               'img'=>'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=220&fit=crop'],
-                        ['id'=>'isl',     'name'=>'Islamiat',          'short'=>'Islamic Studies & Heritage',    'img'=>'https://images.unsplash.com/photo-1584551246679-258d5b5ef0f1?w=400&h=220&fit=crop'],
-                    ];
-                @endphp
-                @foreach($departments as $dept)
-                <div class="swiper-slide">
-                    <a href="{{ route('department.show', $dept['id']) }}" class="dept-card">
-                        <img src="{{ $dept['img'] }}" alt="{{ $dept['name'] }}">
-                        <div class="dept-card-body">
-                            <h3>{{ $dept['name'] }}</h3>
-                            <p>{{ $dept['short'] }}</p>
-                            <span>Explore →</span>
+            {{-- LEFT: PRINCIPAL --}}
+            <div class="info-card">
+                <div class="info-hdr">PRINCIPAL </div>
+                <div class="info-body">
+                    <div class="vc-row">
+                        {{-- Replace with: <img class="vc-photo" src="{{ asset('images/principle.jpg') }}" alt="Principal"> --}}
+                        <div style="width:100px;height:120px;background:#1a3a6c;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:36px;border-radius:4px;">👤</div>
+                        <div class="vc-text">
+                            The long term growth and sustainable development of nations depends largely on the professional performances of its human resources.
+                            Human resources can perform professionally, only if their capacities are built, constantly updated and continuously upgraded with the passage of time, and they are motivated enough to work individually and collectively towards solutions of current problems &amp; prevention of new ones. This all can happen only in presence of an all-inclusive, vibrant, dynamic and competitive higher education system matching national &amp; interna ......
+                            <a href="#"
+                            >View More</a>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                @endforeach
             </div>
-            <div class="swiper-pagination"></div>
+
+            {{-- MIDDLE: HIGHLIGHTS --}}
+            <div class="info-card">
+                <div class="info-hdr">IMPORTANT HIGHLIGHTS</div>
+                <div class="info-body">
+                    <ul class="info-list">
+                        <li>
+                            <span class="new-tag">New</span>
+                            <a href="#">Revised Fee Schedule for Semester Fee of Spring 2026</a>
+                        </li>
+                        <li>
+                            <span class="new-tag">New</span>
+                            <a href="#">GPM achieved another milestone in digitalization with NBP Payment Portal</a>
+                        </li>
+                        <li>
+                            <span class="new-tag">New</span>
+                            <a href="#">Circular regarding Professional Conduct &amp; Conflict Resolution</a>
+                        </li>
+                        <li>
+                            <span class="new-tag">New</span>
+                            <a href="#">HEC Policy on Protection against Sexual Harassment in HEIs 2021</a>
+                        </li>
+                        <li>
+                            <span class="new-tag">New</span>
+                            <a href="#">Higher Education Commission Policy on Drug &amp; Tobacco Abuse</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {{-- RIGHT: NEWS & EVENTS --}}
+            <div class="info-card">
+                <div class="info-hdr">
+                    NEWS &amp; EVENTS
+                    {{-- <a href="{{ route('news') }}">View All</a> --}}
+                </div>
+                <div class="info-body">
+                    <ul class="info-list">
+                        <li>
+                            <span class="arr">▶</span>
+                            <div>
+                                <a href="#">Registrar Office: University Resumes On-Campus Classes from April 6</a>
+                                <span class="new-tag">New</span>
+                                <span class="news-date">01 Apr 2026</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="arr">▶</span>
+                            <div>
+                                <a href="#">GPM Achieves Major Digital Milestone with NBP Payment Portal</a>
+                                <span class="new-tag">New</span>
+                                <span class="news-date">02 Feb 2026</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="arr">▶</span>
+                            <div>
+                                <a href="#">One-Day Training on Program Review for Effectiveness (PREE)</a>
+                                <span class="new-tag">New</span>
+                                <span class="news-date">02 Feb 2026</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="arr">▶</span>
+                            <div>
+                                <a href="#">Schedule For Submission Of Sport Fee — Undergraduate Programs Spring 2026</a>
+                                <span class="news-date">30 Jan 2026</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="arr">▶</span>
+                            <div>
+                                <a href="#">5th Convocation Ceremony Held at Government Postgraduate College Mansehra</a>
+                                <span class="news-date">30 Jan 2026</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
-<!-- ── NEWS ── -->
-<section class="news-section" id="news">
+{{-- ══════════════════════════════════════════
+     6. STATS  (dark blue glow — Screenshot 3 exact)
+══════════════════════════════════════════ --}}
+<section class="stats-section">
     <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <div class="section-tag">News & Events</div>
-            <h2 class="section-title">Stay Up to Date</h2>
-            <p class="section-sub">Latest happenings and upcoming events at Government Postgraduate College Mansehra.</p>
-        </div>
-        <div class="news-grid">
-            <a href="#" class="news-featured" data-aos="fade-right">
-                <div class="thumb">🎓</div>
-                <div class="content">
-                    <div class="news-badge">Featured</div>
-                    <h3>5th Annual Convocation Ceremony — Over 2,000 Graduates Celebrated</h3>
-                    <p style="color:rgba(255,255,255,.6);font-size:13.5px;margin-top:8px;line-height:1.6;">The ceremony was graced by the Governor of KP as chief guest, who distributed medals and degrees among outstanding students.</p>
-                    <div class="date" style="margin-top:12px;">January 28, 2026</div>
-                </div>
-            </a>
-            <div class="news-list" data-aos="fade-left">
-                <a href="#" class="news-item">
-                    <div class="news-item-icon">📢</div>
-                    <div><h4>On-Campus Physical Classes Resume from April 6, 2026</h4><span>01 Apr 2026</span></div>
-                </a>
-                <a href="#" class="news-item">
-                    <div class="news-item-icon">🏆</div>
-                    <div><h4>College Achieves Record QEC Score of 86.69 in 2024–25 Evaluation</h4><span>10 Mar 2026</span></div>
-                </a>
-                <a href="#" class="news-item">
-                    <div class="news-item-icon">🤝</div>
-                    <div><h4>MoU Signed with University of Punjab for Research Collaboration</h4><span>11 Mar 2026</span></div>
-                </a>
-                <a href="#" class="news-item">
-                    <div class="news-item-icon">💻</div>
-                    <div><h4>Physics Department Participates in Pakistan's 1st Quantum Hackathon</h4><span>15 Feb 2026</span></div>
-                </a>
-                <a href="#" class="news-item">
-                    <div class="news-item-icon">🎓</div>
-                    <div><h4>PM Laptop Distribution Ceremony Successfully Held at Campus</h4><span>05 Feb 2026</span></div>
-                </a>
+        <div class="stats-grid-4">
+            <div class="stat-box">
+                <i class="fas fa-building"></i>
+                <div class="s-num">27</div>
+                <div class="s-lbl">Departments</div>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-book-open"></i>
+                <div class="s-num">144</div>
+                <div class="s-lbl">Programs</div>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-user-tie"></i>
+                <div class="s-num">335</div>
+                <div class="s-lbl">Faculty</div>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-user-graduate"></i>
+                <div class="s-num">10,200</div>
+                <div class="s-lbl">Students</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ── WHY CHOOSE US ── -->
-<section class="why-section" id="about">
+{{-- ══════════════════════════════════════════
+     7. QUOTE + ABOUT LINKS  (Screenshot 4 exact)
+══════════════════════════════════════════ --}}
+<section class="quote-section">
     <div class="container">
-        <div class="why-grid">
-            <div data-aos="fade-right">
-                <div class="section-tag">Why Choose Us</div>
-                <h2 class="section-title">A Campus Built for<br>Your Success</h2>
-                <p class="section-sub" style="margin-bottom:32px;">We provide everything you need to grow academically, professionally, and personally in a nurturing environment.</p>
-                <div class="why-features">
-                    <div class="why-feature">
-                        <div class="why-feature-icon">🏛️</div>
-                        <div>
-                            <h4>HEC Recognized & Accredited</h4>
-                            <p>All programs recognized by the Higher Education Commission of Pakistan with W-category ranking.</p>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">🔬</div>
-                        <div>
-                            <h4>World-Class Research Facilities</h4>
-                            <p>Central research labs, digital library, and dedicated innovation centers for every discipline.</p>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">💼</div>
-                        <div>
-                            <h4>Career Development Center</h4>
-                            <p>Dedicated CDC with job placement support, internship programs, and industry partnerships.</p>
-                        </div>
-                    </div>
-                    <div class="why-feature">
-                        <div class="why-feature-icon">🏠</div>
-                        <div>
-                            <h4>Full Campus Facilities</h4>
-                            <p>Hostels, transport service, sports complex, day care center, and a central mosque on campus.</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="quote-card" data-aos="fade-up">
+            <div class="quote-icon-circle">
+                <i class="fas fa-info" style="font-size:36px;"></i>
             </div>
-           <div class="why-visual" data-aos="fade-left">
-    <div class="vc-wrap">
-
-        <img 
-    class="vc-avatar" 
-    src="{{ asset('images/principle.jpg') }}"
-    style="width:220px;height:220px;object-fit:cover;border-radius:50%;"
-    alt="Principal"
-/>
-
-        <div class="vc-name">Prof. Riaz Hussain</div>
-        <div class="vc-title-label">Principal</div>
-
-        <div class="vc-quote">
-            <blockquote>
-                "The long-term growth of nations depends on the professional performance of its human resources. We are committed to building those capacities — constantly and continuously through quality education, research, and character building."
-            </blockquote>
+            <div class="quote-body">
+                <strong>
+                    "Destroying any nation does not require the use of atomic bombs or the use of long range missiles.
+                    <em>It only requires lowering the quality of education and allowing cheating in the examinations by the students.</em>"
+                </strong>
+                Patients die at the hands of such doctors. Buildings collapse at the hands of such engineers.
+                Money is lost at the hands of such economists &amp; accountants. Humanity dies at the hands of such religious scholars.
+                Justice is lost at the hands of such judges...
+                <strong>"The collapse of education is the collapse of the nation."</strong>
+                <span class="q-source">Source:- Written at the entrance gate of UNISA, South Africa.</span>
+            </div>
         </div>
-
-        <a href="#" class="vc-link">Read Full Message →</a>
-
     </div>
-</div>
+</section>
+
+{{-- About UOH circles row — Screenshot 4 bottom --}}
+<section class="about-links-section">
+    <div class="container">
+        <div class="about-circles" data-aos="fade-up">
+            <a href="#" class="about-circle-item">
+                <div class="circle-icon"><i class="fas fa-history"></i></div>
+                <span>About<br>GPM</span>
+            </a>
+            <a href="#" class="about-circle-item">
+                <div class="circle-icon"><i class="fas fa-eye"></i></div>
+                <span>Vision &amp;<br>Mission</span>
+            </a>
+            <a href="#" class="about-circle-item">
+                <div class="circle-icon"><i class="fas fa-award"></i></div>
+                <span>Social<br>Work</span>
+            </a>
+            <a href="#" class="about-circle-item">
+                <div class="circle-icon"><i class="fas fa-bus"></i></div>
+                <span>GPM<br>Transport</span>
+            </a>
+            <a href="#" class="about-circle-item">
+                <div class="circle-icon"><i class="fas fa-building"></i></div>
+                <span>GPM<br>Hostels</span>
+            </a>
         </div>
     </div>
 </section>
 
 @endsection
+
+@push('scripts')
+<script>
+new Swiper('.banner-swiper', {
+    loop: true,
+    speed: 900,
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    autoplay: { delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true },
+    pagination: { el: '.banner-swiper .swiper-pagination', clickable: true },
+    navigation: {
+        nextEl: '.banner-swiper .swiper-button-next',
+        prevEl: '.banner-swiper .swiper-button-prev',
+    },
+});
+</script>
+@endpush
