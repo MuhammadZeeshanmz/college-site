@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'شعبہ اردو — گورنمنٹ پوسٹ گریجویٹ کالج مانسہرہ | Department of Urdu — Government Postgraduate College Mansehra')
+@section('title', 'Department of Islamic Studies — Government Postgraduate College Mansehra')
 
 @push('styles')
 <style>
@@ -30,12 +30,6 @@
 .dept-title-bar h1 {
     font-family: 'Playfair Display', serif;
     font-size: 22px; font-weight: 700; color: #002855; margin: 0;
-}
-.dept-title-bar h1 small {
-    font-size: 14px;
-    font-weight: normal;
-    color: #666;
-    margin-left: 10px;
 }
 .dept-title-bar .dept-icon {
     width: 48px; height: 48px; background: #002855;
@@ -178,27 +172,44 @@
 .sidebar-contact ul li { font-size: 12.5px; color: #444; display: flex; gap: 8px; align-items: flex-start; }
 .sidebar-contact ul li strong { color: #002855; }
 
-/* Urdu-specific styling */
-.urdu-text {
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Alvi Nastaleeq', serif;
+/* Islamic Studies-specific styling */
+.islamic-highlight {
+    background: #e8f5e9;
+    padding: 8px;
+    border-right: 3px solid #2e7d32;
+    margin: 10px 0;
+    font-size: 12px;
+}
+.arabic-text {
+    font-family: 'Traditional Arabic', 'Amiri', 'Scheherazade', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    direction: rtl;
+    text-align: right;
+}
+.urdu-text-islamic {
+    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
     font-size: 14px;
     line-height: 1.8;
 }
-.urdu-poetry {
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Alvi Nastaleeq', serif;
+.quran-verse {
+    font-family: 'Traditional Arabic', 'Amiri', serif;
+    font-size: 18px;
+    text-align: center;
+    background: #f5f0e1;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    direction: rtl;
+}
+.hadith-text {
+    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
     font-style: italic;
     background: #f9f3e8;
     padding: 12px;
     border-radius: 4px;
     text-align: center;
     margin: 10px 0;
-}
-.urdu-highlight {
-    background: #f0f5ff;
-    padding: 8px;
-    border-right: 3px solid #1a6e85;
-    margin: 10px 0;
-    font-size: 12px;
 }
 
 /* Responsive */
@@ -222,7 +233,7 @@
         <span>›</span>
         <a href="#">Social Sciences</a>
         <span>›</span>
-        <span style="color:#fff;">Department of Urdu | شعبہ اردو</span>
+        <span style="color:#fff;">Department of Islamic Studies | شعبہ اسلامیات</span>
     </div>
 </div>
 
@@ -230,8 +241,8 @@
     <div class="dept-wrap">
 
         <div class="dept-title-bar">
-            <div class="dept-icon">📜</div>
-            <h1>Department of Urdu <small>شعبہ اردو</small></h1>
+            <div class="dept-icon">🕌</div>
+            <h1>Department of Islamic Studies <span style="font-size:16px; color:#666;">شعبہ اسلامیات</span></h1>
         </div>
 
         <div class="dept-grid">
@@ -243,17 +254,17 @@
                     <div class="dept-card-hdr">Introduction | تعارف</div>
                     <div class="dept-card-body">
                         <div class="intro-img-row">
-                            <div class="intro-img-placeholder">📖🖋️</div>
+                            <div class="intro-img-placeholder">📖🕋</div>
                             <div class="intro-text">
-                                <p>Welcome to the Department of Urdu at Government Postgraduate College Mansehra!</p>
-                                <p class="urdu-text">گورنمنٹ پوسٹ گریجویٹ کالج مانسہرہ کے شعبہ اردو میں خوش آمدید!</p>
-                                <p>Urdu, the national language of Pakistan, is a beautiful and expressive language that embodies our rich cultural heritage, literature, and identity. Our department is dedicated to promoting and preserving the Urdu language through quality education, research, and literary activities.</p>
-                                <p class="urdu-text">اردو، پاکستان کی قومی زبان، ایک خوبصورت اور موثر زبان ہے جو ہمارے بھرپور ثقافتی ورثے، ادب اور شناخت کی عکاسی کرتی ہے۔ ہمارا شعبہ اردو زبان کو معیاری تعلیم، تحقیق اور ادبی سرگرمیوں کے ذریعے فروغ دینے اور محفوظ کرنے کے لیے وقف ہے۔</p>
+                                <p>Welcome to the Department of Islamic Studies at Government Postgraduate College Mansehra!</p>
+                                <p class="urdu-text-islamic">گورنمنٹ پوسٹ گریجویٹ کالج مانسہرہ کے شعبہ اسلامیات میں خوش آمدید!</p>
+                                <p>The Department of Islamic Studies is dedicated to the scholarly study of Islamic knowledge, including the Quran, Hadith, Islamic jurisprudence (Fiqh), Islamic history, theology, and contemporary Islamic thought. Our department aims to provide students with a deep understanding of Islamic teachings and their application in modern society.</p>
+                                <p class="urdu-text-islamic">شعبہ اسلامیات قرآنی علوم، حدیث، فقہ، اسلامی تاریخ، عقائد اور عصری اسلامی فکر کے علمی مطالعہ کے لیے وقف ہے۔</p>
                             </div>
                         </div>
                         <div class="intro-text" style="margin-bottom:12px;">
-                            <p>The department offers comprehensive programs in Urdu literature, linguistics, and language studies. Our faculty includes renowned scholars, poets, and critics who specialize in classical and modern Urdu literature, including prose, poetry, ghazal, nazm, afsana, and drama. The department regularly organizes literary gatherings (Mushaira), seminars, and workshops to nurture literary taste among students.</p>
-                            <p class="urdu-text">شعبہ اردو ادب، لسانیات اور زبان کے مطالعے میں جامع پروگرام پیش کرتا ہے۔ ہماری فیکلٹی میں معروف اسکالرز، شعراء اور نقاد شامل ہیں جو کلاسیکی اور جدید اردو ادب میں مہارت رکھتے ہیں۔ شعبہ باقاعدگی سے ادبی نشستیں (مشاعرہ)، سیمینار اور ورکشاپس کا اہتمام کرتا ہے۔</p>
+                            <p>The department offers comprehensive programs in Islamic Studies with emphasis on traditional Islamic sciences as well as contemporary perspectives. Our qualified faculty specializes in various fields including Tafsir (Quranic Exegesis), Hadith Sciences, Islamic Law, Islamic Philosophy, and Comparative Religion. The department maintains a rich library of classical and modern Islamic literature.</p>
+                            <p class="urdu-text-islamic">شعبہ میں اسلامی علوم کے جامع پروگرام پیش کیے جاتے ہیں۔ ہماری فیکلٹی تفسیر، علوم حدیث، اسلامی قانون، اسلامی فلسفہ اور تقابلی مذاہب میں مہارت رکھتی ہے۔</p>
                         </div>
                         <a href="#" class="btn-read-more">READ MORE | مزید پڑھیں</a>
                     </div>
@@ -263,9 +274,9 @@
                     <div class="dept-card-hdr">Department Gallery | گیلری</div>
                     <div class="dept-card-body" style="padding:10px;">
                         <div class="intro-gallery-placeholder">
-                            <div class="gal-icon">🎭</div>
-                            <div class="gal-text">Mushaira &amp; Literary Events — GPGCM Mansehra</div>
-                            <div class="gal-text urdu-text" style="font-size:12px;">مشاعرہ اور ادبی تقریبات</div>
+                            <div class="gal-icon">📿</div>
+                            <div class="gal-text">Islamic Studies Seminar — GPGCM Mansehra</div>
+                            <div class="gal-text urdu-text-islamic" style="font-size:12px;">اسلامیات سیمینار</div>
                         </div>
                     </div>
                 </div>
@@ -276,14 +287,14 @@
                         <div class="hod-photo-placeholder">👨‍🏫</div>
                         <div>
                             <div class="hod-text">
-                                Urdu is not just a language; it is the soul of our nation, carrying centuries of culture, tradition, and emotional expression. At the Department of Urdu, GPGC Mansehra, we strive to keep this beautiful language alive and vibrant among the younger generation through quality education and literary engagement...
+                                Islamic knowledge enlightens the mind and purifies the soul. At the Department of Islamic Studies, GPGC Mansehra, we strive to provide authentic Islamic education that prepares students to understand their faith deeply and contribute positively to society as responsible Muslims...
                                 <a href="#" style="color:#0066cc;font-weight:600;text-decoration:none;">Read More</a>
                             </div>
-                            <div class="urdu-text hod-text" style="margin-top:5px;">
-                                اردو صرف ایک زبان نہیں بلکہ ہماری قوم کی روح ہے، جو صدیوں کی ثقافت، روایت اور جذباتی اظہار کی حامل ہے۔ شعبہ اردو، جی پی جی سی مانسہرہ میں، ہم اس خوبصورت زبان کو نوجوان نسل میں زندہ اور توانا رکھنے کی کوشش کرتے ہیں۔
+                            <div class="urdu-text-islamic hod-text" style="margin-top:5px;">
+                                اسلامی علم ذہن کو روشن کرتا ہے اور روح کو پاکیزگی عطا کرتا ہے۔ شعبہ اسلامیات میں ہم مستند اسلامی تعلیم فراہم کرنے کی کوشش کرتے ہیں۔
                             </div>
-                            <div class="hod-name">Prof. Dr. Muhammad Iqbal</div>
-                            <div class="hod-designation">Head of Department, Urdu | صدر شعبہ اردو</div>
+                            <div class="hod-name">Prof. Dr. Muhammad Razaq</div>
+                            <div class="hod-designation">Head of Department, Islamic Studies | صدر شعبہ اسلامیات</div>
                         </div>
                     </div>
                 </div>
@@ -301,63 +312,63 @@
                             <div class="news-scroll-inner">
                                 <ul class="news-list">
                                     <li>
-                                        <a href="#">Annual Urdu Mushaira 2025 — Renowned Poets to Participate</a>
+                                        <a href="#">International Conference on Contemporary Islamic Thought 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">28 Apr 2025</span>
+                                        <span class="news-date">30 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">National Conference on Modern Urdu Literature</a>
+                                        <a href="#">Quranic Studies Workshop — Tafsir &amp; Tajweed</a>
+                                        <span class="new-tag">New</span>
+                                        <span class="news-date">25 Apr 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Department of Islamic Studies Launches Research Journal "Al-Tafheem"</a>
                                         <span class="new-tag">New</span>
                                         <span class="news-date">20 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Urdu Creative Writing &amp; Journalism</a>
-                                        <span class="new-tag">New</span>
-                                        <span class="news-date">15 Apr 2025</span>
+                                        <a href="#">Seminar on "Seerat-un-Nabi (SAW) in Modern Context"</a>
+                                        <span class="news-date">10 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">All Pakistan Inter-Collegiate Urdu Debate Competition</a>
-                                        <span class="news-date">30 Mar 2025</span>
+                                        <a href="#">Inter-Collegiate Quran &amp; Hadith Competition</a>
+                                        <span class="news-date">28 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Seminar on "Urdu Zaban ki Ahmiyat" (Importance of Urdu Language)</a>
-                                        <span class="news-date">25 Mar 2025</span>
+                                        <a href="#">Guest Lecture on Islamic Economics &amp; Finance</a>
+                                        <span class="news-date">15 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Guest Lecture by Famous Urdu Novelist</a>
-                                        <span class="news-date">15 Feb 2025</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Literary Magazine "Rang-e-Adab" Annual Issue Released</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Workshop on Comparative Religion &amp; Interfaith Harmony</a>
+                                        <span class="news-date">20 Feb 2025</span>
                                     </li>
                                     {{-- Duplicate for seamless loop --}}
                                     <li>
-                                        <a href="#">Annual Urdu Mushaira 2025 — Renowned Poets to Participate</a>
+                                        <a href="#">International Conference on Contemporary Islamic Thought 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">28 Apr 2025</span>
+                                        <span class="news-date">30 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">National Conference on Modern Urdu Literature</a>
+                                        <a href="#">Quranic Studies Workshop — Tafsir &amp; Tajweed</a>
+                                        <span class="new-tag">New</span>
+                                        <span class="news-date">25 Apr 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Department of Islamic Studies Launches Research Journal "Al-Tafheem"</a>
                                         <span class="new-tag">New</span>
                                         <span class="news-date">20 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Urdu Creative Writing &amp; Journalism</a>
-                                        <span class="new-tag">New</span>
-                                        <span class="news-date">15 Apr 2025</span>
+                                        <a href="#">Seminar on "Seerat-un-Nabi (SAW) in Modern Context"</a>
+                                        <span class="news-date">10 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">All Pakistan Inter-Collegiate Urdu Debate Competition</a>
-                                        <span class="news-date">30 Mar 2025</span>
+                                        <a href="#">Inter-Collegiate Quran &amp; Hadith Competition</a>
+                                        <span class="news-date">28 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Seminar on "Urdu Zaban ki Ahmiyat" (Importance of Urdu Language)</a>
-                                        <span class="news-date">25 Mar 2025</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Guest Lecture by Famous Urdu Novelist</a>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <a href="#">Guest Lecture on Islamic Economics &amp; Finance</a>
+                                        <span class="news-date">15 Mar 2025</span>
                                     </li>
                                 </ul>
                             </div>
@@ -374,14 +385,15 @@
                                 <tr><th>#</th><th>Program | پروگرام</th><th>Level</th><th>Duration</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td><a href="#">BS Urdu</a><br><span class="urdu-text" style="font-size:11px;">بی ایس اردو</span></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>2</td><td><a href="#">BS Urdu (Literature)</a><br><span class="urdu-text" style="font-size:11px;">بی ایس اردو (ادب)</span></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>3</td><td><a href="#">BS Urdu (Linguistics)</a><br><span class="urdu-text" style="font-size:11px;">بی ایس اردو (لسانیات)</span></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>4</td><td><a href="#">M.A Urdu</a><br><span class="urdu-text" style="font-size:11px;">ایم اے اردو</span></td><td><span class="prog-badge ms">Master</span></td><td>2 Years</td></tr>
-                                <tr><td>5</td><td><a href="#">M.Phil Urdu</a><br><span class="urdu-text" style="font-size:11px;">ایم فل اردو</span></td><td><span class="prog-badge ms">M.Phil</span></td><td>2 Years</td></tr>
-                                <tr><td>6</td><td><a href="#">MS Urdu</a><br><span class="urdu-text" style="font-size:11px;">ایم ایس اردو</span></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>7</td><td><a href="#">Ph.D Urdu</a><br><span class="urdu-text" style="font-size:11px;">پی ایچ ڈی اردو</span></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
-                                <tr><td>8</td><td><a href="#">Certificate in Urdu Creative Writing</a><br><span class="urdu-text" style="font-size:11px;">تخلیقی اردو تحریر کا سرٹیفکیٹ</span></td><td><span class="prog-badge bs">Certificate</span></td><td>6 Months</td></tr>
+                                <tr><td>1</td><td><a href="#">BS Islamic Studies</a><br><span class="urdu-text-islamic" style="font-size:11px;">بی ایس اسلامیات</span></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>2</td><td><a href="#">BS Islamic Studies (Quran &amp; Tafsir)</a><br><span class="urdu-text-islamic" style="font-size:11px;">بی ایس اسلامیات (قرآن و تفسیر)</span></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>3</td><td><a href="#">BS Islamic Studies (Hadith Sciences)</a><br><span class="urdu-text-islamic" style="font-size:11px;">بی ایس اسلامیات (علوم حدیث)</span></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>4</td><td><a href="#">BS Islamic Studies (Fiqh &amp; Law)</a><br><span class="urdu-text-islamic" style="font-size:11px;">بی ایس اسلامیات (فقہ و قانون)</span></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>5</td><td><a href="#">M.A Islamic Studies</a><br><span class="urdu-text-islamic" style="font-size:11px;">ایم اے اسلامیات</span></td><td><span class="prog-badge ms">Master</span></td><td>2 Years</td></tr>
+                                <tr><td>6</td><td><a href="#">M.Phil Islamic Studies</a><br><span class="urdu-text-islamic" style="font-size:11px;">ایم فل اسلامیات</span></td><td><span class="prog-badge ms">M.Phil</span></td><td>2 Years</td></tr>
+                                <tr><td>7</td><td><a href="#">MS Islamic Studies</a><br><span class="urdu-text-islamic" style="font-size:11px;">ایم ایس اسلامیات</span></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
+                                <tr><td>8</td><td><a href="#">Ph.D Islamic Studies</a><br><span class="urdu-text-islamic" style="font-size:11px;">پی ایچ ڈی اسلامیات</span></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>9</td><td><a href="#">Certificate in Arabic Language</a><br><span class="urdu-text-islamic" style="font-size:11px;">سرٹیفکیٹ عربی زبان</span></td><td><span class="prog-badge bs">Certificate</span></td><td>6 Months</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -393,23 +405,23 @@
                     <div class="dept-card-body">
                         <div class="imp-links-grid">
                             <a href="#">HOD's Message | صدر شعبہ کا پیغام</a>
-                            <a href="#">BS Urdu | بی ایس اردو</a>
-                            <a href="#">BS Urdu Literature | بی ایس اردو ادب</a>
-                            <a href="#">BS Urdu Linguistics | بی ایس اردو لسانیات</a>
-                            <a href="#">M.A Urdu | ایم اے اردو</a>
-                            <a href="#">M.Phil Urdu | ایم فل اردو</a>
-                            <a href="#">Ph.D Urdu | پی ایچ ڈی اردو</a>
+                            <a href="#">BS Islamic Studies | بی ایس اسلامیات</a>
+                            <a href="#">BS Quran &amp; Tafsir | بی ایس قرآن و تفسیر</a>
+                            <a href="#">BS Hadith Sciences | بی ایس علوم حدیث</a>
+                            <a href="#">BS Fiqh &amp; Law | بی ایس فقہ و قانون</a>
+                            <a href="#">M.A Islamic Studies | ایم اے اسلامیات</a>
+                            <a href="#">M.Phil Islamic Studies | ایم فل اسلامیات</a>
+                            <a href="#">Ph.D Islamic Studies | پی ایچ ڈی اسلامیات</a>
                             <a href="#">Faculty Members | فیکلٹی اراکین</a>
                             <a href="#">Research Publications | تحقیقی مطبوعات</a>
-                            <a href="#">Urdu Adabi Majlis | اردو ادبی مجلس</a>
-                            <a href="#">Mushaira Schedule | مشاعرہ شیڈول</a>
-                            <a href="#">Literary Magazine "Rang-e-Adab" | رسالہ "رنگ ادب"</a>
+                            <a href="#">Islamic Research Journal | تحقیقی مجلہ "التفہیم"</a>
+                            <a href="#">Quranic Studies Center | مرکز علوم قرآنی</a>
+                            <a href="#">Hadith Research Cell | مرکز تحقیقات حدیث</a>
                             <a href="#">Downloads (Syllabus) | ڈاؤن لوڈ (نصاب)</a>
                             <a href="#">Research Areas | تحقیقی شعبہ جات</a>
                             <a href="#">Seminar Schedule | سیمینار شیڈول</a>
                             <a href="#">Alumni Network | سابق طلبہ نیٹ ورک</a>
-                            <a href="#">Urdu Poetry Archives | اردو شاعری آرکائیوز</a>
-                            <a href="#">Classical Literature | کلاسیکی ادب</a>
+                            <a href="#">Islamic Library | اسلامی لائبریری</a>
                         </div>
                     </div>
                 </div>
@@ -424,22 +436,22 @@
                     <div class="dept-card-body">
                         <ul class="news-list">
                             <li>
-                                <a href="#">Mushaira Registration Open for Students</a>
+                                <a href="#">Tafsir Competition Registration Open</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">25 Apr 2025</span>
+                                <span class="news-date">28 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Literary Magazine Submission Deadline Extended</a>
+                                <a href="#">Arabic Language Course Starting Soon</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">18 Apr 2025</span>
+                                <span class="news-date">22 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Urdu Debate Competition Registrations</a>
-                                <span class="news-date">10 Apr 2025</span>
+                                <a href="#">Research Proposals Invited for Islamic Journal</a>
+                                <span class="news-date">15 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Research Journal "Urdu Duniya" Call for Papers</a>
-                                <span class="news-date">28 Mar 2025</span>
+                                <a href="#">Scholarship for Islamic Studies Students</a>
+                                <span class="news-date">05 Apr 2025</span>
                             </li>
                         </ul>
                     </div>
@@ -453,10 +465,10 @@
                         <li><a href="#">Date Sheet | تاریخ وار شیڈول</a></li>
                         <li><a href="#">Admissions | داخلہ</a></li>
                         <li><a href="#">Fee Structure | فیس کا ڈھانچہ</a></li>
-                        <li><a href="#">Literary Society | ادبی سوسائٹی</a></li>
+                        <li><a href="#">Islamic Society | اسلامی سوسائٹی</a></li>
                         <li><a href="#">Downloads | ڈاؤن لوڈ</a></li>
                         <li><a href="#">Timetable | ٹائم ٹیبل</a></li>
-                        <li><a href="#">Poetry Submission | شاعری جمع کروائیں</a></li>
+                        <li><a href="#">Quran Learning Portal | قرآن سیکھیں</a></li>
                     </ul>
                 </div>
 
@@ -465,57 +477,72 @@
                     <ul>
                         <li><strong>HOD Office | صدر شعبہ کا دفتر:</strong></li>
                         <li style="padding-left:8px;">📞 0997-XXXXXXX</li>
-                        <li style="padding-left:8px;">📧 urdu@gpgcmansehra.edu.pk</li>
+                        <li style="padding-left:8px;">📧 islamiat@gpgcmansehra.edu.pk</li>
                         <li><strong>Location | مقام:</strong></li>
-                        <li style="padding-left:8px;">Urdu Block (Social Sciences Wing),<br>GPGC Mansehra, KPK, Pakistan</li>
+                        <li style="padding-left:8px;">Islamic Studies Block (Social Sciences Wing),<br>GPGC Mansehra, KPK, Pakistan</li>
                         <li><strong>Office Hours | دفتری اوقات:</strong></li>
                         <li style="padding-left:8px;">Mon–Sat: 8:00 AM – 4:00 PM</li>
-                        <li><strong>Literary Society Office:</strong></li>
-                        <li style="padding-left:8px;">📞 0997-XXXXXX Ext: 311</li>
+                        <li><strong>Islamic Library:</strong></li>
+                        <li style="padding-left:8px;">📞 0997-XXXXXX Ext: 314</li>
                     </ul>
                 </div>
 
                 <div class="dept-card">
                     <div class="dept-card-hdr">Accreditation | تسلیم شدگی</div>
                     <div class="dept-card-body" style="font-size:13px;color:#444;line-height:1.65;">
-                        <p>All programs are recognized and approved by the <strong>Higher Education Commission (HEC) of Pakistan</strong>.</p>
-                        <p class="urdu-text" style="margin-top:5px;">تمام پروگرام <strong>ہائر ایجوکیشن کمیشن (ایچ ای سی) پاکستان</strong> سے تسلیم شدہ ہیں۔</p>
+                        <p>All programs are recognized and approved by the <strong>Higher Education Commission (HEC) of Pakistan</strong> and <strong>Ittehad-e-Tanzeemat-e-Madaris Pakistan</strong>.</p>
+                        <p class="urdu-text-islamic" style="margin-top:5px;">تمام پروگرام <strong>ہائر ایجوکیشن کمیشن (ایچ ای سی) پاکستان</strong> سے تسلیم شدہ ہیں۔</p>
                     </div>
                 </div>
 
                 <div class="dept-card">
-                    <div class="dept-card-hdr">📚 Urdu Research Areas | تحقیقی شعبہ جات</div>
+                    <div class="dept-card-hdr">📚 Islamic Research Areas | تحقیقی شعبہ جات</div>
                     <div class="dept-card-body">
                         <div class="imp-links-grid" style="grid-template-columns: 1fr;">
-                            <a href="#">📖 Classical Urdu Poetry | کلاسیکی اردو شاعری</a>
-                            <a href="#">📝 Modern Urdu Literature | جدید اردو ادب</a>
-                            <a href="#">🗣️ Urdu Linguistics | اردو لسانیات</a>
-                            <a href="#">📜 Ghazal Studies | غزل Studies</a>
-                            <a href="#">✍️ Urdu Fiction (Afsana &amp; Novel) | اردو افسانہ اور ناول</a>
-                            <a href="#">🎭 Urdu Drama | اردو ڈرامہ</a>
-                            <a href="#">🌍 Comparative Literature | تقابلی ادب</a>
-                            <a href="#">📰 Urdu Journalism | اردو صحافت</a>
-                            <a href="#">🖋️ Creative Writing | تخلیقی تحریر</a>
-                            <a href="#">📚 Literary Criticism | ادبی تنقید</a>
-                            <a href="#">🏛️ Progressive Writers Movement | ترقی پسند تحریک</a>
-                            <a href="#">🕌 Urdu &amp; Islamic Literature | اردو اور اسلامی ادب</a>
+                            <a href="#">📖 Quranic Studies (Tafsir) | علوم القرآن (تفسیر)</a>
+                            <a href="#">📜 Hadith Sciences | علوم حدیث</a>
+                            <a href="#">⚖️ Islamic Jurisprudence (Fiqh) | فقہ اسلامی</a>
+                            <a href="#">🧠 Islamic Theology (Aqidah) | علم الکلام</a>
+                            <a href="#">🕌 Islamic History &amp; Civilization | تاریخ و تہذیب اسلامی</a>
+                            <a href="#">💚 Sufism &amp; Islamic Spirituality | تصوف و روحانیت</a>
+                            <a href="#">💰 Islamic Economics &amp; Finance | اسلامی معاشیات و مالیات</a>
+                            <a href="#">⚖️ Islamic Law &amp; Constitution | اسلامی قانون و دستور</a>
+                            <a href="#">🌍 Comparative Religion | تقابلی مذاہب</a>
+                            <a href="#">📚 Arabic Language &amp; Literature | عربی زبان و ادب</a>
+                            <a href="#">👩‍🎓 Women in Islam | اسلام میں خواتین</a>
+                            <a href="#">🌐 Contemporary Islamic Thought | عصری اسلامی فکر</a>
+                            <a href="#">🤝 Interfaith Harmony | بین المذاہب ہم آہنگی</a>
+                            <a href="#">📡 Islamic Media &amp; Communication | اسلامی میڈیا و مواصلات</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="dept-card">
-                    <div class="dept-card-hdr">🎭 Literary Activities | ادبی سرگرمیاں</div>
-                    <div class="dept-card-body" style="font-size:12.5px;color:#555;line-height:1.6;">
-                        <p>🟢 <strong>Monthly Mushaira:</strong> Poetry recitation sessions</p>
-                        <p>🟡 <strong>Urdu Adabi Majlis:</strong> Weekly literary gatherings</p>
-                        <p>🔵 <strong>Creative Writing Workshop:</strong> Monthly workshops</p>
-                        <p>🟣 <strong>Literary Magazine "Rang-e-Adab":</strong> Annual publication</p>
-                        <p>🟠 <strong>Debate &amp; Speech Competitions:</strong> Inter-collegiate events</p>
-                        <div class="urdu-poetry" style="margin-top:12px;">
-                            <p>ؔتجدد ہے اس کا فریضہ کہ وہ پرانی بات نہ کر</p>
-                            <p>مگر اس سے پہلے کہ وہ نئے راستے پر چلے</p>
-                            <p style="font-size:11px; margin-top:8px;">- احمد ندیم قاسمی</p>
+                    <div class="dept-card-hdr">🕋 Quran &amp; Hadith | قرآن و حدیث</div>
+                    <div class="dept-card-body">
+                        <div class="quran-verse">
+                            <p>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                            <p>اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</p>
+                            <p style="font-size:12px; margin-top:8px;">Surah Al-Alaq (96:1)</p>
                         </div>
+                        <div class="hadith-text">
+                            <p class="arabic-text">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</p>
+                            <p style="margin-top:5px;">"Seeking knowledge is an obligation upon every Muslim"</p>
+                            <p style="font-size:11px; margin-top:5px;">— Sunan Ibn Majah</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">🎓 Career Opportunities | ملازمت کے مواقع</div>
+                    <div class="dept-card-body" style="font-size:12px;color:#555;line-height:1.6;">
+                        <p>✓ <strong>Teaching &amp; Academia | تدریس و تعلیم</strong></p>
+                        <p>✓ <strong>Islamic Banking &amp; Finance | اسلامی بینکاری و مالیات</strong></p>
+                        <p>✓ <strong>Research &amp; Writing | تحقیق و تحریر</strong></p>
+                        <p>✓ <strong>Religious Advisory | شرعی مشاورت</strong></p>
+                        <p>✓ <strong>Media &amp; Publishing | میڈیا و اشاعت</strong></p>
+                        <p>✓ <strong>NGOs &amp; Social Welfare | غیر سرکاری تنظیمیں و فلاحی کام</strong></p>
+                        <p>✓ <strong>Civil Services (CSS/PMS) | سول سروسز</strong></p>
                     </div>
                 </div>
 

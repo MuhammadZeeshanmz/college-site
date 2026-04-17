@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Department of Computer Science — Government Postgraduate College Mansehra')
+@section('title', 'Department of Zoology — Government Postgraduate College Mansehra')
 
 @push('styles')
 <style>
@@ -172,6 +172,24 @@
 .sidebar-contact ul li { font-size: 12.5px; color: #444; display: flex; gap: 8px; align-items: flex-start; }
 .sidebar-contact ul li strong { color: #002855; }
 
+/* Zoology-specific styling */
+.zoology-highlight {
+    background: #e8f0fe;
+    padding: 8px;
+    border-left: 3px solid #1a6e85;
+    margin: 10px 0;
+    font-size: 12px;
+}
+.zoology-specimen {
+    display: inline-block;
+    background: #1a6e85;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
 /* Responsive */
 @media (max-width: 1024px) { .dept-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) {
@@ -193,7 +211,7 @@
         <span>›</span>
         <a href="#">Sciences</a>
         <span>›</span>
-        <span style="color:#fff;">Department of Computer Science</span>
+        <span style="color:#fff;">Department of Zoology</span>
     </div>
 </div>
 
@@ -201,8 +219,8 @@
     <div class="dept-wrap">
 
         <div class="dept-title-bar">
-            <div class="dept-icon">💻</div>
-            <h1>Department of Computer Science</h1>
+            <div class="dept-icon">🐘</div>
+            <h1>Department of Zoology</h1>
         </div>
 
         <div class="dept-grid">
@@ -214,15 +232,14 @@
                     <div class="dept-card-hdr">Introduction</div>
                     <div class="dept-card-body">
                         <div class="intro-img-row">
-                            {{-- <img class="intro-img" src="{{ asset('images/cs-dept.jpg') }}" alt="CS Department"> --}}
-                            <div class="intro-img-placeholder">💻</div>
+                            <div class="intro-img-placeholder">🦋🐠</div>
                             <div class="intro-text">
-                                <p>Welcome to the Department of Computer Science at Government Postgraduate College Mansehra!</p>
-                                <p>Our department offers a diverse range of esteemed undergraduate and graduate degree programs in Computer Science. Our curriculum is carefully designed to equip students with both theoretical knowledge and practical skills essential for the modern digital economy.</p>
+                                <p>Welcome to the Department of Zoology at Government Postgraduate College Mansehra!</p>
+                                <p>Zoology is the branch of biology that studies the animal kingdom, including the structure, embryology, evolution, classification, habits, and distribution of all animals, both living and extinct. Our department is committed to providing quality education in animal sciences with emphasis on both theoretical knowledge and practical skills.</p>
                             </div>
                         </div>
                         <div class="intro-text" style="margin-bottom:12px;">
-                            <p>The department boasts a highly qualified faculty of experienced professionals and researchers committed to academic excellence. State-of-the-art computer labs, high-speed internet, and a dedicated research environment provide students with cutting-edge tools to innovate and excel.</p>
+                            <p>The department features well-equipped laboratories for General Zoology, Comparative Anatomy, Physiology, Ecology, Entomology, Parasitology, and Fisheries. Our Zoology Museum houses an extensive collection of preserved specimens, skeletons, and models. The qualified faculty specializes in various fields including Wildlife Biology, Molecular Biology, Genetics, and Environmental Zoology.</p>
                         </div>
                         <a href="#" class="btn-read-more">READ MORE</a>
                     </div>
@@ -231,10 +248,9 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">Department Gallery</div>
                     <div class="dept-card-body" style="padding:10px;">
-                        {{-- <img class="intro-gallery-img" src="{{ asset('images/cs-event.jpg') }}" alt="CS Event"> --}}
                         <div class="intro-gallery-placeholder">
-                            <div class="gal-icon">🏛️</div>
-                            <div class="gal-text">Computing Society — GPGCM</div>
+                            <div class="gal-icon">🦁</div>
+                            <div class="gal-text">Zoology Museum &amp; Lab — GPGCM Mansehra</div>
                         </div>
                     </div>
                 </div>
@@ -242,14 +258,14 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">HOD's Message</div>
                     <div class="hod-card">
-                        <div class="hod-photo-placeholder">👤</div>
+                        <div class="hod-photo-placeholder">👨‍🏫</div>
                         <div>
                             <div class="hod-text">
-                                It is my pleasure to welcome you to the Department of Computer Science at Government Postgraduate College Mansehra. Our department is committed to fostering a culture of innovation, critical thinking, and academic excellence...
+                                The study of animals reveals the incredible diversity and complexity of life on Earth. At the Department of Zoology, GPGC Mansehra, we inspire students to explore the fascinating world of animal life, from microscopic organisms to majestic mammals. Our programs emphasize hands-on learning through laboratory work and field studies...
                                 <a href="#" style="color:#0066cc;font-weight:600;text-decoration:none;">Read More</a>
                             </div>
-                            <div class="hod-name">Prof. Dr. [HOD Name]</div>
-                            <div class="hod-designation">Head of Department, Computer Science</div>
+                            <div class="hod-name">Prof. Dr. Tahir Mehmood</div>
+                            <div class="hod-designation">Head of Department, Zoology</div>
                         </div>
                     </div>
                 </div>
@@ -267,59 +283,63 @@
                             <div class="news-scroll-inner">
                                 <ul class="news-list">
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">National Wildlife Conservation Symposium 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">25 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Field Trip to Ayubia National Park for Biodiversity Study</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">18 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Zoology Department Launches Marine Biology Research Program</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">10 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Workshop on Molecular Biology Techniques (PCR &amp; Gel Electrophoresis)</a>
+                                        <span class="news-date">25 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
+                                        <a href="#">Inter-Collegiate Zoology Olympiad 2025</a>
+                                        <span class="news-date">20 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">Guest Lecture on Endangered Species of Pakistan</a>
+                                        <span class="news-date">05 Feb 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Research Collaboration with WWF Pakistan</a>
+                                        <span class="news-date">15 Jan 2025</span>
                                     </li>
                                     {{-- Duplicate for seamless loop --}}
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">National Wildlife Conservation Symposium 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">25 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Field Trip to Ayubia National Park for Biodiversity Study</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">18 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Zoology Department Launches Marine Biology Research Program</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">10 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Workshop on Molecular Biology Techniques (PCR &amp; Gel Electrophoresis)</a>
+                                        <span class="news-date">25 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
+                                        <a href="#">Inter-Collegiate Zoology Olympiad 2025</a>
+                                        <span class="news-date">20 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">Guest Lecture on Endangered Species of Pakistan</a>
+                                        <span class="news-date">05 Feb 2025</span>
                                     </li>
                                 </ul>
                             </div>
@@ -336,14 +356,16 @@
                                 <tr><th>#</th><th>Program</th><th>Level</th><th>Duration</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td><a href="#">BS Computer Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>2</td><td><a href="#">BS Software Engineering</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>3</td><td><a href="#">BS Artificial Intelligence</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>4</td><td><a href="#">BS Data Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>5</td><td><a href="#">BS Cyber Security</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>6</td><td><a href="#">Masters (Computer Science)</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>7</td><td><a href="#">MS Computer Science</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>8</td><td><a href="#">Ph.D Computer Science</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>1</td><td><a href="#">BS Zoology</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>2</td><td><a href="#">BS Zoology (Wildlife &amp; Conservation)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>3</td><td><a href="#">BS Zoology (Fisheries &amp; Aquaculture)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>4</td><td><a href="#">BS Zoology (Entomology)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>5</td><td><a href="#">BS Molecular Biology &amp; Genetics</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>6</td><td><a href="#">M.Sc Zoology</a></td><td><span class="prog-badge ms">Master</span></td><td>2 Years</td></tr>
+                                <tr><td>7</td><td><a href="#">M.Phil Zoology</a></td><td><span class="prog-badge ms">M.Phil</span></td><td>2 Years</td></tr>
+                                <tr><td>8</td><td><a href="#">MS Zoology</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
+                                <tr><td>9</td><td><a href="#">Ph.D Zoology</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>10</td><td><a href="#">Certificate in Wildlife Management</a></td><td><span class="prog-badge bs">Certificate</span></td><td>6 Months</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -355,25 +377,27 @@
                     <div class="dept-card-body">
                         <div class="imp-links-grid">
                             <a href="#">HOD's Message</a>
-                            <a href="#">BS (Artificial Intelligence)</a>
-                            <a href="#">BS (Computer Science)</a>
-                            <a href="#">BS (Data Science)</a>
-                            <a href="#">BS (Software Engineering)</a>
-                            <a href="#">BS (Telecom &amp; Networks)</a>
-                            <a href="#">Masters (Computer Science)</a>
-                            <a href="#">Ph.D Computer Science</a>
-                            <a href="#">MS (Computer Science)</a>
-                            <a href="#">MOUs</a>
-                            <a href="#">Program Offered &amp; Goals</a>
-                            <a href="#">Industry Advisory Board</a>
-                            <a href="#">Industry Linkages</a>
-                            <a href="#">MS-PhD Program Proforma</a>
-                            <a href="#">Laboratories</a>
-                            <a href="#">BS (Cyber Security)</a>
-                            <a href="#">Other Downloads</a>
-                            <a href="#">BS (Robotics &amp; Intelligent Systems)</a>
+                            <a href="#">BS Zoology (General)</a>
+                            <a href="#">BS Wildlife &amp; Conservation</a>
+                            <a href="#">BS Fisheries &amp; Aquaculture</a>
+                            <a href="#">BS Entomology</a>
+                            <a href="#">BS Molecular Biology</a>
+                            <a href="#">M.Sc Zoology</a>
+                            <a href="#">M.Phil Zoology</a>
+                            <a href="#">Ph.D Zoology</a>
+                            <a href="#">Zoology Museum</a>
+                            <a href="#">Research Publications</a>
                             <a href="#">Faculty Members</a>
-                            <a href="#">Joint PhD Faculty Pool</a>
+                            <a href="#">Research Areas</a>
+                            <a href="#">Seminar Schedule</a>
+                            <a href="#">Zoology Society</a>
+                            <a href="#">Wildlife Club</a>
+                            <a href="#">Aquarium &amp; Hatchery</a>
+                            <a href="#">Downloads (Lab Manuals)</a>
+                            <a href="#">Research Collaborations</a>
+                            <a href="#">Alumni Network</a>
+                            <a href="#">Field Study Reports</a>
+                            <a href="#">Specimen Collection</a>
                         </div>
                     </div>
                 </div>
@@ -388,18 +412,26 @@
                     <div class="dept-card-body">
                         <ul class="news-list">
                             <li>
-                                <a href="#">Mid-Term Examination Schedule — Spring 2026</a>
+                                <a href="#">Zoology Museum Open House for Students</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">10 Apr 2026</span>
+                                <span class="news-date">20 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Project Submission Deadline Extended for Final Year Students</a>
+                                <a href="#">Summer Research Internship at Wildlife Department</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">05 Apr 2026</span>
+                                <span class="news-date">12 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Fee Submission Schedule for Spring Semester 2026</a>
-                                <span class="news-date">01 Mar 2026</span>
+                                <a href="#">Field Study Trip to Himalayan Region</a>
+                                <span class="news-date">05 Apr 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Scholarship for Fisheries &amp; Aquaculture Students</a>
+                                <span class="news-date">25 Mar 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Wildlife Photography Competition</a>
+                                <span class="news-date">15 Mar 2025</span>
                             </li>
                         </ul>
                     </div>
@@ -414,8 +446,11 @@
                         <li><a href="#">Admissions</a></li>
                         <li><a href="#">Fee Structure</a></li>
                         <li><a href="#">Research Projects</a></li>
-                        <li><a href="#">Industry Linkages</a></li>
+                        <li><a href="#">Zoology Lab Manuals</a></li>
                         <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Museum Tour Booking</a></li>
+                        <li><a href="#">Timetable</a></li>
+                        <li><a href="#">Field Study Registration</a></li>
                     </ul>
                 </div>
 
@@ -424,19 +459,65 @@
                     <ul>
                         <li><strong>HOD Office:</strong></li>
                         <li style="padding-left:8px;">📞 0997-XXXXXXX</li>
-                        <li style="padding-left:8px;">📧 cs@gpgcmansehra.edu.pk</li>
+                        <li style="padding-left:8px;">📧 zoology@gpgcmansehra.edu.pk</li>
                         <li><strong>Location:</strong></li>
-                        <li style="padding-left:8px;">CS Block, GPGC Mansehra,<br>Mansehra, KPK, Pakistan</li>
+                        <li style="padding-left:8px;">Zoology Block (Science Wing),<br>GPGC Mansehra, KPK, Pakistan</li>
                         <li><strong>Office Hours:</strong></li>
                         <li style="padding-left:8px;">Mon–Sat: 8:00 AM – 4:00 PM</li>
+                        <li><strong>Zoology Museum:</strong></li>
+                        <li style="padding-left:8px;">📞 0997-XXXXXX Ext: 308</li>
+                        <li style="padding-left:8px;">🦋 Open: Mon-Thu 9:00 AM – 2:00 PM</li>
                     </ul>
                 </div>
 
                 <div class="dept-card">
-                    <div class="dept-card-hdr">Accreditation</div>
+                    <div class="dept-card-hdr">Accreditation &amp; Recognition</div>
                     <div class="dept-card-body" style="font-size:13px;color:#444;line-height:1.65;">
                         <p>All programs are recognized and approved by the <strong>Higher Education Commission (HEC) of Pakistan</strong>.</p>
-                        <p style="margin-top:8px;">The department is continuously working towards achieving <strong>NCEAC accreditation</strong>.</p>
+                        <p style="margin-top:8px;">The department maintains strong collaboration with:</p>
+                        <ul style="margin-top:5px;margin-left:20px;color:#555;">
+                            <li>World Wildlife Fund (WWF) Pakistan</li>
+                            <li>Pakistan Wildlife Department</li>
+                            <li>Fisheries Development Board</li>
+                            <li>Pakistan Museum of Natural History</li>
+                            <li>National Institute of Oceanography</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">🦋 Zoology Research Areas</div>
+                    <div class="dept-card-body">
+                        <div class="imp-links-grid" style="grid-template-columns: 1fr;">
+                            <a href="#">🐘 Wildlife Biology &amp; Conservation</a>
+                            <a href="#">🐠 Fisheries &amp; Aquaculture</a>
+                            <a href="#">🦋 Entomology</a>
+                            <a href="#">🧬 Molecular Biology &amp; Genetics</a>
+                            <a href="#">🔬 Parasitology</a>
+                            <a href="#">🦁 Animal Physiology</a>
+                            <a href="#">🐦 Ornithology</a>
+                            <a href="#">🐍 Herpetology</a>
+                            <a href="#">🌊 Marine Biology</a>
+                            <a href="#">🦴 Comparative Anatomy</a>
+                            <a href="#">🧫 Developmental Biology</a>
+                            <a href="#">🌿 Ecology &amp; Environmental Biology</a>
+                            <a href="#">🐪 Animal Behavior</a>
+                            <a href="#">🧬 Evolutionary Biology</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">🔬 Zoology Laboratories</div>
+                    <div class="dept-card-body" style="font-size:12.5px;color:#555;line-height:1.6;">
+                        <p>🟢 <strong>General Zoology Lab:</strong> Specimen observation and dissection</p>
+                        <p>🟡 <strong>Physiology Lab:</strong> Animal physiology experiments</p>
+                        <p>🔵 <strong>Molecular Biology Lab:</strong> DNA analysis, PCR techniques</p>
+                        <p>🟣 <strong>Ecology Lab:</strong> Environmental sampling and analysis</p>
+                        <p>🟠 <strong>Fisheries Lab:</strong> Fish biology and aquaculture</p>
+                        <p style="margin-top:8px;background:#f0f5ff;padding:8px;border-radius:4px;">
+                            <strong>🦋 Zoology Museum:</strong> Houses over 500 preserved specimens, skeletons, and taxonomic collections.
+                        </p>
                     </div>
                 </div>
 

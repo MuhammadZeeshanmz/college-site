@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Department of Computer Science — Government Postgraduate College Mansehra')
+@section('title', 'Department of English — Government Postgraduate College Mansehra')
 
 @push('styles')
 <style>
@@ -172,6 +172,33 @@
 .sidebar-contact ul li { font-size: 12.5px; color: #444; display: flex; gap: 8px; align-items: flex-start; }
 .sidebar-contact ul li strong { color: #002855; }
 
+/* English-specific styling */
+.english-highlight {
+    background: #e8f0fe;
+    padding: 8px;
+    border-left: 3px solid #8e44ad;
+    margin: 10px 0;
+    font-size: 12px;
+}
+.english-poetry {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    background: #f9f3e8;
+    padding: 12px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 10px 0;
+}
+.lit-period {
+    display: inline-block;
+    background: #8e44ad;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
 /* Responsive */
 @media (max-width: 1024px) { .dept-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) {
@@ -191,9 +218,9 @@
         <span>›</span>
         <a href="#">Faculties</a>
         <span>›</span>
-        <a href="#">Sciences</a>
+        <a href="#">Social Sciences</a>
         <span>›</span>
-        <span style="color:#fff;">Department of Computer Science</span>
+        <span style="color:#fff;">Department of English</span>
     </div>
 </div>
 
@@ -201,8 +228,8 @@
     <div class="dept-wrap">
 
         <div class="dept-title-bar">
-            <div class="dept-icon">💻</div>
-            <h1>Department of Computer Science</h1>
+            <div class="dept-icon">📖</div>
+            <h1>Department of English</h1>
         </div>
 
         <div class="dept-grid">
@@ -214,15 +241,14 @@
                     <div class="dept-card-hdr">Introduction</div>
                     <div class="dept-card-body">
                         <div class="intro-img-row">
-                            {{-- <img class="intro-img" src="{{ asset('images/cs-dept.jpg') }}" alt="CS Department"> --}}
-                            <div class="intro-img-placeholder">💻</div>
+                            <div class="intro-img-placeholder">📚✍️</div>
                             <div class="intro-text">
-                                <p>Welcome to the Department of Computer Science at Government Postgraduate College Mansehra!</p>
-                                <p>Our department offers a diverse range of esteemed undergraduate and graduate degree programs in Computer Science. Our curriculum is carefully designed to equip students with both theoretical knowledge and practical skills essential for the modern digital economy.</p>
+                                <p>Welcome to the Department of English at Government Postgraduate College Mansehra!</p>
+                                <p>English is a global language of communication, literature, and scholarship. Our department is dedicated to fostering excellence in English language learning, literary studies, and critical thinking. We prepare students to become effective communicators, analytical readers, and creative writers.</p>
                             </div>
                         </div>
                         <div class="intro-text" style="margin-bottom:12px;">
-                            <p>The department boasts a highly qualified faculty of experienced professionals and researchers committed to academic excellence. State-of-the-art computer labs, high-speed internet, and a dedicated research environment provide students with cutting-edge tools to innovate and excel.</p>
+                            <p>The department offers comprehensive programs in English Literature, Linguistics, and Language Teaching. Our faculty includes distinguished scholars specializing in British Literature, American Literature, Postcolonial Studies, Literary Theory, Applied Linguistics, and ELT (English Language Teaching). The department maintains a well-stocked library with classic and contemporary literary works, critical editions, and research journals.</p>
                         </div>
                         <a href="#" class="btn-read-more">READ MORE</a>
                     </div>
@@ -231,10 +257,9 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">Department Gallery</div>
                     <div class="dept-card-body" style="padding:10px;">
-                        {{-- <img class="intro-gallery-img" src="{{ asset('images/cs-event.jpg') }}" alt="CS Event"> --}}
                         <div class="intro-gallery-placeholder">
-                            <div class="gal-icon">🏛️</div>
-                            <div class="gal-text">Computing Society — GPGCM</div>
+                            <div class="gal-icon">🎭</div>
+                            <div class="gal-text">English Literary Society — GPGCM Mansehra</div>
                         </div>
                     </div>
                 </div>
@@ -242,14 +267,14 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">HOD's Message</div>
                     <div class="hod-card">
-                        <div class="hod-photo-placeholder">👤</div>
+                        <div class="hod-photo-placeholder">👩‍🏫</div>
                         <div>
                             <div class="hod-text">
-                                It is my pleasure to welcome you to the Department of Computer Science at Government Postgraduate College Mansehra. Our department is committed to fostering a culture of innovation, critical thinking, and academic excellence...
+                                Language is the road map of a culture, and English opens doors to global opportunities in education, business, and diplomacy. At the Department of English, GPGC Mansehra, we strive to develop in our students a deep appreciation for literature, mastery over language skills, and the confidence to express themselves eloquently...
                                 <a href="#" style="color:#0066cc;font-weight:600;text-decoration:none;">Read More</a>
                             </div>
-                            <div class="hod-name">Prof. Dr. [HOD Name]</div>
-                            <div class="hod-designation">Head of Department, Computer Science</div>
+                            <div class="hod-name">Prof. Dr. Samina Akhtar</div>
+                            <div class="hod-designation">Head of Department, English</div>
                         </div>
                     </div>
                 </div>
@@ -267,59 +292,67 @@
                             <div class="news-scroll-inner">
                                 <ul class="news-list">
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">International Conference on English Literature &amp; Linguistics 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">30 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Shakespeare Week Celebrations — Drama Performances</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">25 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">English Department Launches Creative Writing Club</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">18 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
+                                        <a href="#">Workshop on Academic Writing &amp; Research Skills</a>
+                                        <span class="news-date">05 Apr 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">All Pakistan Bilingual Declamation Contest</a>
+                                        <span class="news-date">28 Mar 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Guest Lecture on Postcolonial Literature</a>
+                                        <span class="news-date">15 Mar 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Literary Magazine "The Quill" Annual Edition Released</a>
+                                        <span class="news-date">20 Feb 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Poetry Recitation &amp; Creative Writing Competition</a>
                                         <span class="news-date">10 Jan 2025</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
                                     </li>
                                     {{-- Duplicate for seamless loop --}}
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">International Conference on English Literature &amp; Linguistics 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">30 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Shakespeare Week Celebrations — Drama Performances</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">25 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">English Department Launches Creative Writing Club</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">18 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Workshop on Academic Writing &amp; Research Skills</a>
+                                        <span class="news-date">05 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
+                                        <a href="#">All Pakistan Bilingual Declamation Contest</a>
+                                        <span class="news-date">28 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">Guest Lecture on Postcolonial Literature</a>
+                                        <span class="news-date">15 Mar 2025</span>
                                     </li>
                                 </ul>
                             </div>
@@ -336,14 +369,16 @@
                                 <tr><th>#</th><th>Program</th><th>Level</th><th>Duration</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td><a href="#">BS Computer Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>2</td><td><a href="#">BS Software Engineering</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>3</td><td><a href="#">BS Artificial Intelligence</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>4</td><td><a href="#">BS Data Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>5</td><td><a href="#">BS Cyber Security</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>6</td><td><a href="#">Masters (Computer Science)</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>7</td><td><a href="#">MS Computer Science</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>8</td><td><a href="#">Ph.D Computer Science</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>1</td><td><a href="#">BS English (Literature)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>2</td><td><a href="#">BS English (Linguistics)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>3</td><td><a href="#">BS English (ELT)</a><br><span style="font-size:10px;color:#666;">English Language Teaching</span></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>4</td><td><a href="#">BS English (Applied Linguistics)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>5</td><td><a href="#">M.A English</a></td><td><span class="prog-badge ms">Master</span></td><td>2 Years</td></tr>
+                                <tr><td>6</td><td><a href="#">M.Phil English</a></td><td><span class="prog-badge ms">M.Phil</span></td><td>2 Years</td></tr>
+                                <tr><td>7</td><td><a href="#">MS English</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
+                                <tr><td>8</td><td><a href="#">Ph.D English</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>9</td><td><a href="#">Certificate in Creative Writing</a></td><td><span class="prog-badge bs">Certificate</span></td><td>6 Months</td></tr>
+                                <tr><td>10</td><td><a href="#">Certificate in English Language Teaching (CELT)</a></td><td><span class="prog-badge bs">Certificate</span></td><td>6 Months</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -355,25 +390,23 @@
                     <div class="dept-card-body">
                         <div class="imp-links-grid">
                             <a href="#">HOD's Message</a>
-                            <a href="#">BS (Artificial Intelligence)</a>
-                            <a href="#">BS (Computer Science)</a>
-                            <a href="#">BS (Data Science)</a>
-                            <a href="#">BS (Software Engineering)</a>
-                            <a href="#">BS (Telecom &amp; Networks)</a>
-                            <a href="#">Masters (Computer Science)</a>
-                            <a href="#">Ph.D Computer Science</a>
-                            <a href="#">MS (Computer Science)</a>
-                            <a href="#">MOUs</a>
-                            <a href="#">Program Offered &amp; Goals</a>
-                            <a href="#">Industry Advisory Board</a>
-                            <a href="#">Industry Linkages</a>
-                            <a href="#">MS-PhD Program Proforma</a>
-                            <a href="#">Laboratories</a>
-                            <a href="#">BS (Cyber Security)</a>
-                            <a href="#">Other Downloads</a>
-                            <a href="#">BS (Robotics &amp; Intelligent Systems)</a>
+                            <a href="#">BS English Literature</a>
+                            <a href="#">BS English Linguistics</a>
+                            <a href="#">BS English (ELT)</a>
+                            <a href="#">M.A English</a>
+                            <a href="#">M.Phil English</a>
+                            <a href="#">Ph.D English</a>
                             <a href="#">Faculty Members</a>
-                            <a href="#">Joint PhD Faculty Pool</a>
+                            <a href="#">Research Publications</a>
+                            <a href="#">English Literary Society</a>
+                            <a href="#">Creative Writing Club</a>
+                            <a href="#">Drama &amp; Theatre Club</a>
+                            <a href="#">Literary Magazine "The Quill"</a>
+                            <a href="#">Downloads (Course Materials)</a>
+                            <a href="#">Research Areas</a>
+                            <a href="#">Seminar Schedule</a>
+                            <a href="#">Alumni Network</a>
+                            <a href="#">Language Lab</a>
                         </div>
                     </div>
                 </div>
@@ -388,18 +421,22 @@
                     <div class="dept-card-body">
                         <ul class="news-list">
                             <li>
-                                <a href="#">Mid-Term Examination Schedule — Spring 2026</a>
+                                <a href="#">Creative Writing Competition — Submit Your Entries</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">10 Apr 2026</span>
+                                <span class="news-date">28 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Project Submission Deadline Extended for Final Year Students</a>
+                                <a href="#">Shakespeare Drama Festival Registrations Open</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">05 Apr 2026</span>
+                                <span class="news-date">22 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Fee Submission Schedule for Spring Semester 2026</a>
-                                <span class="news-date">01 Mar 2026</span>
+                                <a href="#">Research Journal "English Horizons" Call for Papers</a>
+                                <span class="news-date">15 Apr 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Scholarship for English Literature Students</a>
+                                <span class="news-date">05 Apr 2025</span>
                             </li>
                         </ul>
                     </div>
@@ -409,13 +446,15 @@
                     <div class="sq-hdr">📌 Quick Access</div>
                     <ul>
                         <li><a href="#">Faculty Members</a></li>
-                        <li><a href="#">Lab Schedule</a></li>
+                        <li><a href="#">Class Schedule</a></li>
                         <li><a href="#">Date Sheet</a></li>
                         <li><a href="#">Admissions</a></li>
                         <li><a href="#">Fee Structure</a></li>
                         <li><a href="#">Research Projects</a></li>
-                        <li><a href="#">Industry Linkages</a></li>
+                        <li><a href="#">Language Lab Booking</a></li>
                         <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Literary Society Events</a></li>
+                        <li><a href="#">Timetable</a></li>
                     </ul>
                 </div>
 
@@ -424,19 +463,79 @@
                     <ul>
                         <li><strong>HOD Office:</strong></li>
                         <li style="padding-left:8px;">📞 0997-XXXXXXX</li>
-                        <li style="padding-left:8px;">📧 cs@gpgcmansehra.edu.pk</li>
+                        <li style="padding-left:8px;">📧 english@gpgcmansehra.edu.pk</li>
                         <li><strong>Location:</strong></li>
-                        <li style="padding-left:8px;">CS Block, GPGC Mansehra,<br>Mansehra, KPK, Pakistan</li>
+                        <li style="padding-left:8px;">English Block (Social Sciences Wing),<br>GPGC Mansehra, KPK, Pakistan</li>
                         <li><strong>Office Hours:</strong></li>
                         <li style="padding-left:8px;">Mon–Sat: 8:00 AM – 4:00 PM</li>
+                        <li><strong>Language Lab:</strong></li>
+                        <li style="padding-left:8px;">📞 0997-XXXXXX Ext: 313</li>
                     </ul>
                 </div>
 
                 <div class="dept-card">
-                    <div class="dept-card-hdr">Accreditation</div>
+                    <div class="dept-card-hdr">Accreditation &amp; Recognition</div>
                     <div class="dept-card-body" style="font-size:13px;color:#444;line-height:1.65;">
                         <p>All programs are recognized and approved by the <strong>Higher Education Commission (HEC) of Pakistan</strong>.</p>
-                        <p style="margin-top:8px;">The department is continuously working towards achieving <strong>NCEAC accreditation</strong>.</p>
+                        <p style="margin-top:8px;">The department maintains strong collaboration with:</p>
+                        <ul style="margin-top:5px;margin-left:20px;color:#555;">
+                            <li>British Council Pakistan</li>
+                            <li>National University of Modern Languages (NUML)</li>
+                            <li>Pakistan English Language Teachers Association (PELTA)</li>
+                            <li>SPELT (Society of Pakistan English Language Teachers)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">📚 English Research Areas</div>
+                    <div class="dept-card-body">
+                        <div class="imp-links-grid" style="grid-template-columns: 1fr;">
+                            <a href="#">🏰 British Literature</a>
+                            <a href="#">🗽 American Literature</a>
+                            <a href="#">🌍 Postcolonial Literature</a>
+                            <a href="#">📖 Literary Theory &amp; Criticism</a>
+                            <a href="#">🗣️ Applied Linguistics</a>
+                            <a href="#">📝 ELT (English Language Teaching)</a>
+                            <a href="#">🎭 Shakespeare Studies</a>
+                            <a href="#">📜 Romantic Poetry</a>
+                            <a href="#">🔍 Discourse Analysis</a>
+                            <a href="#">🧠 Psycholinguistics</a>
+                            <a href="#">📚 World Literature in English</a>
+                            <a href="#">✍️ Creative Writing</a>
+                            <a href="#">📖 Translation Studies</a>
+                            <a href="#">💬 Sociolinguistics</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">🎭 Literary Society Activities</div>
+                    <div class="dept-card-body" style="font-size:12.5px;color:#555;line-height:1.6;">
+                        <p>🟢 <strong>Weekly Literary Circle:</strong> Discussions on literary works</p>
+                        <p>🟡 <strong>Drama &amp; Theatre Club:</strong> Annual play productions</p>
+                        <p>🔵 <strong>Creative Writing Workshops:</strong> Monthly sessions</p>
+                        <p>🟣 <strong>Poetry Recitation Evenings:</strong> Open mic events</p>
+                        <p>🟠 <strong>Debate &amp; Declamation:</strong> Inter-collegiate competitions</p>
+                        <div class="english-poetry" style="margin-top:12px;">
+                            <p>"Shall I compare thee to a summer's day?</p>
+                            <p>Thou art more lovely and more temperate..."</p>
+                            <p style="font-size:11px; margin-top:8px;">— William Shakespeare (Sonnet 18)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">🎓 Career Opportunities</div>
+                    <div class="dept-card-body" style="font-size:12px;color:#555;line-height:1.6;">
+                        <p>✓ <strong>Teaching &amp; Academia</strong></p>
+                        <p>✓ <strong>Content Writing &amp; Journalism</strong></p>
+                        <p>✓ <strong>Publishing &amp; Editing</strong></p>
+                        <p>✓ <strong>Media &amp; Communication</strong></p>
+                        <p>✓ <strong>Corporate Communications</strong></p>
+                        <p>✓ <strong>Freelance Writing</strong></p>
+                        <p>✓ <strong>Translators &amp; Interpreters</strong></p>
+                        <p>✓ <strong>Civil Services (CSS/PMS)</strong></p>
                     </div>
                 </div>
 

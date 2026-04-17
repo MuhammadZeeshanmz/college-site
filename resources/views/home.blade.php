@@ -301,7 +301,7 @@
                 <div class="ibox-img">🔗</div>
                 <p>Important Links</p>
             </a>
-            {{-- <a href="{{ route('student-portal') }}" class="icon-box"> --}}
+            <a href="{{ route('student-portal') }}" class="icon-box">
                 <div class="ibox-img">🖥️</div>
                 <p>GPM Portals</p>
             </a>
@@ -327,19 +327,15 @@
 <section class="promo-section">
     <div class="container">
         <div class="promo-grid">
-
             <a href="#">
-    <img src="{{ asset('images/banner1.jpg') }}" alt="Admissions Open">
-</a>
-
-            <a href="#">
-                <img src="{{ asset('images/banner2.jpg') }}" alt="Research Projects">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&h=160&fit=crop" alt="Affiliated Institutions">
             </a>
-
             <a href="#">
-                <img src="{{ asset('images/banner3.jpg') }}" alt="Scholarships">
+                <img src="https://images.unsplash.com/photo-1532094349884-543559052dee?w=600&h=160&fit=crop" alt="Research Projects">
             </a>
-
+            <a href="#">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b6f60?w=600&h=160&fit=crop" alt="Scholarships">
+            </a>
         </div>
     </div>
 </section>
@@ -353,7 +349,7 @@
 
             {{-- LEFT: PRINCIPAL --}}
             <div class="info-card">
-                <div class="info-hdr">PRINCIPAL </div>
+                <div class="info-hdr">PRINCIPAL / VICE CHANCELLOR</div>
                 <div class="info-body">
                     <div class="vc-row">
                         {{-- Replace with: <img class="vc-photo" src="{{ asset('images/principle.jpg') }}" alt="Principal"> --}}
@@ -361,8 +357,7 @@
                         <div class="vc-text">
                             The long term growth and sustainable development of nations depends largely on the professional performances of its human resources.
                             Human resources can perform professionally, only if their capacities are built, constantly updated and continuously upgraded with the passage of time, and they are motivated enough to work individually and collectively towards solutions of current problems &amp; prevention of new ones. This all can happen only in presence of an all-inclusive, vibrant, dynamic and competitive higher education system matching national &amp; interna ......
-                            <a href="#"
-                            >View More</a>
+                            <a href="#">View More</a>
                         </div>
                     </div>
                 </div>
@@ -401,7 +396,7 @@
             <div class="info-card">
                 <div class="info-hdr">
                     NEWS &amp; EVENTS
-                    {{-- <a href="{{ route('news') }}">View All</a> --}}
+                    <a href="{{ route('news') }}">View All</a>
                 </div>
                 <div class="info-body">
                     <ul class="info-list">

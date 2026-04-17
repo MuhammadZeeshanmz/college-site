@@ -547,30 +547,26 @@
                     <div class="mega-col">
                         <h5>Sciences</h5>
                         <a href="{{ route('department.show','cs') }}">Computer Science</a>
+                        <a href="{{ route('department.show','it') }}">Information Technology</a>
                         <a href="{{ route('department.show','math') }}">Mathematics</a>
                         <a href="{{ route('department.show','physics') }}">Physics</a>
                         <a href="{{ route('department.show','chem') }}">Chemistry</a>
                         <a href="{{ route('department.show','stat') }}">Statistics</a>
-                        <a href="{{ route('department.show','bio') }}">Biology (Zoology / Botany)</a>
+                       <a href="{{ route('department.show','zoology') }}">Zoology</a>
+<a href="{{ route('department.show','botany') }}">Botany</a>
                     </div>
                     <div class="mega-col">
-                        <h5>Social &amp; Admin Sciences</h5>
+                        <h5>Social &amp; Sciences</h5>
                         <a href="{{ route('department.show','eco') }}">Economics</a>
                         <a href="{{ route('department.show','ps') }}">Political Science</a>
-                        <a href="#">Sociology</a>
-                        <a href="#">Psychology</a>
-                        <a href="#">History</a>
-                        <a href="#">Islamiat / Islamic Studies</a>
-                    </div>
-                    <div class="mega-col">
-                        <h5>Languages &amp; Humanities</h5>
-                        <a href="{{ route('department.show','english') }}">English</a>
+                        <a href="{{ route('department.show','islamic') }}">Islamiat / Islamic Studies</a>
+                          <a href="{{ route('department.show','english') }}">English</a>
                         <a href="{{ route('department.show','urdu') }}">Urdu</a>
-                        <a href="#">Pashto</a>
-                        <a href="#">Philosophy</a>
-                        <a href="#">Education</a>
-                        <a href="#">Physical Education</a>
+                        <a href="{{ route('department.show','pashto') }}">Pashto</a>
                     </div>
+                   
+                      
+                    
                 </div>
             </li>
 

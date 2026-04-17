@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Department of Computer Science — Government Postgraduate College Mansehra')
+@section('title', 'Department of Chemistry — Government Postgraduate College Mansehra')
 
 @push('styles')
 <style>
@@ -172,6 +172,24 @@
 .sidebar-contact ul li { font-size: 12.5px; color: #444; display: flex; gap: 8px; align-items: flex-start; }
 .sidebar-contact ul li strong { color: #002855; }
 
+/* Chemistry-specific styling */
+.chem-formula {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    background: #f0f5ff;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+.chem-badge {
+    display: inline-block;
+    background: #1a6e85;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
 /* Responsive */
 @media (max-width: 1024px) { .dept-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) {
@@ -193,7 +211,7 @@
         <span>›</span>
         <a href="#">Sciences</a>
         <span>›</span>
-        <span style="color:#fff;">Department of Computer Science</span>
+        <span style="color:#fff;">Department of Chemistry</span>
     </div>
 </div>
 
@@ -201,8 +219,8 @@
     <div class="dept-wrap">
 
         <div class="dept-title-bar">
-            <div class="dept-icon">💻</div>
-            <h1>Department of Computer Science</h1>
+            <div class="dept-icon">🧪</div>
+            <h1>Department of Chemistry</h1>
         </div>
 
         <div class="dept-grid">
@@ -214,15 +232,14 @@
                     <div class="dept-card-hdr">Introduction</div>
                     <div class="dept-card-body">
                         <div class="intro-img-row">
-                            {{-- <img class="intro-img" src="{{ asset('images/cs-dept.jpg') }}" alt="CS Department"> --}}
-                            <div class="intro-img-placeholder">💻</div>
+                            <div class="intro-img-placeholder">🧪⚗️</div>
                             <div class="intro-text">
-                                <p>Welcome to the Department of Computer Science at Government Postgraduate College Mansehra!</p>
-                                <p>Our department offers a diverse range of esteemed undergraduate and graduate degree programs in Computer Science. Our curriculum is carefully designed to equip students with both theoretical knowledge and practical skills essential for the modern digital economy.</p>
+                                <p>Welcome to the Department of Chemistry at Government Postgraduate College Mansehra!</p>
+                                <p>Chemistry is the central science that bridges physics with other natural sciences, exploring the composition, structure, properties, and transformations of matter. Our department is dedicated to providing comprehensive education in chemistry, emphasizing both theoretical knowledge and practical laboratory skills.</p>
                             </div>
                         </div>
                         <div class="intro-text" style="margin-bottom:12px;">
-                            <p>The department boasts a highly qualified faculty of experienced professionals and researchers committed to academic excellence. State-of-the-art computer labs, high-speed internet, and a dedicated research environment provide students with cutting-edge tools to innovate and excel.</p>
+                            <p>The department features well-equipped laboratories for Organic Chemistry, Inorganic Chemistry, Physical Chemistry, Analytical Chemistry, and Biochemistry. Our qualified faculty members specialize in diverse fields including Synthetic Chemistry, Spectroscopy, Environmental Chemistry, and Materials Chemistry, ensuring students receive quality education and research training.</p>
                         </div>
                         <a href="#" class="btn-read-more">READ MORE</a>
                     </div>
@@ -231,10 +248,9 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">Department Gallery</div>
                     <div class="dept-card-body" style="padding:10px;">
-                        {{-- <img class="intro-gallery-img" src="{{ asset('images/cs-event.jpg') }}" alt="CS Event"> --}}
                         <div class="intro-gallery-placeholder">
-                            <div class="gal-icon">🏛️</div>
-                            <div class="gal-text">Computing Society — GPGCM</div>
+                            <div class="gal-icon">⚗️</div>
+                            <div class="gal-text">Chemistry Lab — GPGCM Mansehra</div>
                         </div>
                     </div>
                 </div>
@@ -242,14 +258,14 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">HOD's Message</div>
                     <div class="hod-card">
-                        <div class="hod-photo-placeholder">👤</div>
+                        <div class="hod-photo-placeholder">👨‍🔬</div>
                         <div>
                             <div class="hod-text">
-                                It is my pleasure to welcome you to the Department of Computer Science at Government Postgraduate College Mansehra. Our department is committed to fostering a culture of innovation, critical thinking, and academic excellence...
+                                Chemistry is not just a subject; it's the foundation of countless scientific discoveries and technological innovations. At the Department of Chemistry, GPGC Mansehra, we strive to create an environment where students develop a deep understanding of chemical principles and their applications in everyday life...
                                 <a href="#" style="color:#0066cc;font-weight:600;text-decoration:none;">Read More</a>
                             </div>
-                            <div class="hod-name">Prof. Dr. [HOD Name]</div>
-                            <div class="hod-designation">Head of Department, Computer Science</div>
+                            <div class="hod-name">Prof. Dr. Muhammad Riaz</div>
+                            <div class="hod-designation">Head of Department, Chemistry</div>
                         </div>
                     </div>
                 </div>
@@ -267,59 +283,63 @@
                             <div class="news-scroll-inner">
                                 <ul class="news-list">
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">National Chemistry Conference 2025 at GPGCM</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">20 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Workshop on Advanced Analytical Techniques (HPLC, GC-MS)</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">12 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Chemistry Department Receives Research Grant for Green Chemistry Project</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">28 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Industrial Visit to Pharmaceutical Manufacturing Unit</a>
+                                        <span class="news-date">18 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
+                                        <a href="#">Inter-Collegiate Chemistry Olympiad 2025</a>
+                                        <span class="news-date">05 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">Guest Lecture on Polymer Chemistry and Applications</a>
+                                        <span class="news-date">15 Jan 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Environmental Chemistry Awareness Campaign</a>
+                                        <span class="news-date">10 Dec 2024</span>
                                     </li>
                                     {{-- Duplicate for seamless loop --}}
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">National Chemistry Conference 2025 at GPGCM</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">20 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Workshop on Advanced Analytical Techniques (HPLC, GC-MS)</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">12 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Chemistry Department Receives Research Grant for Green Chemistry Project</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">28 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Industrial Visit to Pharmaceutical Manufacturing Unit</a>
+                                        <span class="news-date">18 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
+                                        <a href="#">Inter-Collegiate Chemistry Olympiad 2025</a>
+                                        <span class="news-date">05 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">Guest Lecture on Polymer Chemistry and Applications</a>
+                                        <span class="news-date">15 Jan 2025</span>
                                     </li>
                                 </ul>
                             </div>
@@ -336,14 +356,16 @@
                                 <tr><th>#</th><th>Program</th><th>Level</th><th>Duration</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td><a href="#">BS Computer Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>2</td><td><a href="#">BS Software Engineering</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>3</td><td><a href="#">BS Artificial Intelligence</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>4</td><td><a href="#">BS Data Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>5</td><td><a href="#">BS Cyber Security</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>6</td><td><a href="#">Masters (Computer Science)</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>7</td><td><a href="#">MS Computer Science</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>8</td><td><a href="#">Ph.D Computer Science</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>1</td><td><a href="#">BS Chemistry</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>2</td><td><a href="#">BS Chemistry (Organic)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>3</td><td><a href="#">BS Chemistry (Inorganic)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>4</td><td><a href="#">BS Chemistry (Physical)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>5</td><td><a href="#">BS Biochemistry</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>6</td><td><a href="#">BS Environmental Chemistry</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>7</td><td><a href="#">M.Sc Chemistry</a></td><td><span class="prog-badge ms">Master</span></td><td>2 Years</td></tr>
+                                <tr><td>8</td><td><a href="#">M.Phil Chemistry</a></td><td><span class="prog-badge ms">M.Phil</span></td><td>2 Years</td></tr>
+                                <tr><td>9</td><td><a href="#">MS Chemistry</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
+                                <tr><td>10</td><td><a href="#">Ph.D Chemistry</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -355,25 +377,27 @@
                     <div class="dept-card-body">
                         <div class="imp-links-grid">
                             <a href="#">HOD's Message</a>
-                            <a href="#">BS (Artificial Intelligence)</a>
-                            <a href="#">BS (Computer Science)</a>
-                            <a href="#">BS (Data Science)</a>
-                            <a href="#">BS (Software Engineering)</a>
-                            <a href="#">BS (Telecom &amp; Networks)</a>
-                            <a href="#">Masters (Computer Science)</a>
-                            <a href="#">Ph.D Computer Science</a>
-                            <a href="#">MS (Computer Science)</a>
-                            <a href="#">MOUs</a>
-                            <a href="#">Program Offered &amp; Goals</a>
-                            <a href="#">Industry Advisory Board</a>
-                            <a href="#">Industry Linkages</a>
-                            <a href="#">MS-PhD Program Proforma</a>
-                            <a href="#">Laboratories</a>
-                            <a href="#">BS (Cyber Security)</a>
-                            <a href="#">Other Downloads</a>
-                            <a href="#">BS (Robotics &amp; Intelligent Systems)</a>
+                            <a href="#">BS Chemistry (General)</a>
+                            <a href="#">BS Organic Chemistry</a>
+                            <a href="#">BS Inorganic Chemistry</a>
+                            <a href="#">BS Physical Chemistry</a>
+                            <a href="#">BS Biochemistry</a>
+                            <a href="#">BS Environmental Chemistry</a>
+                            <a href="#">M.Sc Chemistry</a>
+                            <a href="#">M.Phil Chemistry</a>
+                            <a href="#">Ph.D Chemistry</a>
+                            <a href="#">Chemistry Laboratories</a>
+                            <a href="#">Research Publications</a>
                             <a href="#">Faculty Members</a>
-                            <a href="#">Joint PhD Faculty Pool</a>
+                            <a href="#">Research Areas</a>
+                            <a href="#">Seminar Schedule</a>
+                            <a href="#">Chemistry Society</a>
+                            <a href="#">Lab Safety Manual</a>
+                            <a href="#">Chemical Inventory</a>
+                            <a href="#">Downloads (Lab Manuals)</a>
+                            <a href="#">Research Collaborations</a>
+                            <a href="#">Alumni Network</a>
+                            <a href="#">Journal Subscriptions</a>
                         </div>
                     </div>
                 </div>
@@ -388,18 +412,26 @@
                     <div class="dept-card-body">
                         <ul class="news-list">
                             <li>
-                                <a href="#">Mid-Term Examination Schedule — Spring 2026</a>
+                                <a href="#">Chemistry Practical Exams Schedule — Spring 2025</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">10 Apr 2026</span>
+                                <span class="news-date">16 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Project Submission Deadline Extended for Final Year Students</a>
+                                <a href="#">Research Proposal Submission for Summer Research Program</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">05 Apr 2026</span>
+                                <span class="news-date">08 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Fee Submission Schedule for Spring Semester 2026</a>
-                                <span class="news-date">01 Mar 2026</span>
+                                <a href="#">Summer Internship Program at NUST Chemical Engineering Dept</a>
+                                <span class="news-date">30 Mar 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Scholarship Announcement for Chemistry Students</a>
+                                <span class="news-date">20 Mar 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Safety Training Workshop for Lab Assistants</a>
+                                <span class="news-date">10 Mar 2025</span>
                             </li>
                         </ul>
                     </div>
@@ -414,8 +446,11 @@
                         <li><a href="#">Admissions</a></li>
                         <li><a href="#">Fee Structure</a></li>
                         <li><a href="#">Research Projects</a></li>
-                        <li><a href="#">Industry Linkages</a></li>
+                        <li><a href="#">Chemistry Lab Manuals</a></li>
                         <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Chemical Stock</a></li>
+                        <li><a href="#">Timetable</a></li>
+                        <li><a href="#">Safety Protocols</a></li>
                     </ul>
                 </div>
 
@@ -424,19 +459,57 @@
                     <ul>
                         <li><strong>HOD Office:</strong></li>
                         <li style="padding-left:8px;">📞 0997-XXXXXXX</li>
-                        <li style="padding-left:8px;">📧 cs@gpgcmansehra.edu.pk</li>
+                        <li style="padding-left:8px;">📧 chemistry@gpgcmansehra.edu.pk</li>
                         <li><strong>Location:</strong></li>
-                        <li style="padding-left:8px;">CS Block, GPGC Mansehra,<br>Mansehra, KPK, Pakistan</li>
+                        <li style="padding-left:8px;">Chemistry Block (Science Wing),<br>GPGC Mansehra, KPK, Pakistan</li>
                         <li><strong>Office Hours:</strong></li>
                         <li style="padding-left:8px;">Mon–Sat: 8:00 AM – 4:00 PM</li>
+                        <li><strong>Chemistry Labs:</strong></li>
+                        <li style="padding-left:8px;">📞 0997-XXXXXX Ext: 306</li>
+                        <li style="padding-left:8px;">🧪 Organic, Inorganic, Physical, Analytical, Biochemistry Labs</li>
                     </ul>
                 </div>
 
                 <div class="dept-card">
-                    <div class="dept-card-hdr">Accreditation</div>
+                    <div class="dept-card-hdr">Accreditation &amp; Recognition</div>
                     <div class="dept-card-body" style="font-size:13px;color:#444;line-height:1.65;">
                         <p>All programs are recognized and approved by the <strong>Higher Education Commission (HEC) of Pakistan</strong>.</p>
-                        <p style="margin-top:8px;">The department is continuously working towards achieving <strong>NCEAC accreditation</strong>.</p>
+                        <p style="margin-top:8px;">The department maintains strong collaboration with:</p>
+                        <ul style="margin-top:5px;margin-left:20px;color:#555;">
+                            <li>Pakistan Council of Scientific &amp; Industrial Research (PCSIR)</li>
+                            <li>Nuclear Institute for Food and Agriculture (NIFA)</li>
+                            <li>National University of Sciences &amp; Technology (NUST)</li>
+                            <li>Local Pharmaceutical Industries</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">🧪 Chemistry Research Areas</div>
+                    <div class="dept-card-body">
+                        <div class="imp-links-grid" style="grid-template-columns: 1fr;">
+                            <a href="#">🔬 Synthetic Organic Chemistry</a>
+                            <a href="#">⚗️ Coordination Chemistry</a>
+                            <a href="#">🧫 Medicinal Chemistry</a>
+                            <a href="#">🌿 Natural Products Chemistry</a>
+                            <a href="#">💧 Environmental Chemistry</a>
+                            <a href="#">🔋 Materials Chemistry</a>
+                            <a href="#">🧬 Biochemistry &amp; Enzymology</a>
+                            <a href="#">📊 Analytical Chemistry</a>
+                            <a href="#">🎨 Green Chemistry</a>
+                            <a href="#">🔬 Nanochemistry</a>
+                            <a href="#">💊 Pharmaceutical Chemistry</a>
+                            <a href="#">🌾 Agricultural Chemistry</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">⚗️ Safety &amp; Guidelines</div>
+                    <div class="dept-card-body" style="font-size:12.5px;color:#555;line-height:1.6;">
+                        <p>🔴 <strong>Lab Safety Protocols:</strong> All students must wear lab coats, safety goggles, and closed-toe shoes in laboratory areas.</p>
+                        <p style="margin-top:6px;">🟡 <strong>Chemical Handling:</strong> Proper training provided for handling hazardous chemicals.</p>
+                        <p style="margin-top:6px;">🟢 <strong>Emergency Equipment:</strong> Fire extinguishers, first aid kits, and eyewash stations available in all labs.</p>
                     </div>
                 </div>
 

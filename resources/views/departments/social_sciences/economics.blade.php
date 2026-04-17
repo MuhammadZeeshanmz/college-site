@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Department of Computer Science — Government Postgraduate College Mansehra')
+@section('title', 'Department of Economics — Government Postgraduate College Mansehra')
 
 @push('styles')
 <style>
@@ -172,6 +172,31 @@
 .sidebar-contact ul li { font-size: 12.5px; color: #444; display: flex; gap: 8px; align-items: flex-start; }
 .sidebar-contact ul li strong { color: #002855; }
 
+/* Economics-specific styling */
+.econ-highlight {
+    background: #e8f0fe;
+    padding: 8px;
+    border-left: 3px solid #27ae60;
+    margin: 10px 0;
+    font-size: 12px;
+}
+.econ-formula {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    background: #f0f5ff;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+.econ-badge {
+    display: inline-block;
+    background: #27ae60;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
 /* Responsive */
 @media (max-width: 1024px) { .dept-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) {
@@ -191,9 +216,9 @@
         <span>›</span>
         <a href="#">Faculties</a>
         <span>›</span>
-        <a href="#">Sciences</a>
+        <a href="#">Social Sciences</a>
         <span>›</span>
-        <span style="color:#fff;">Department of Computer Science</span>
+        <span style="color:#fff;">Department of Economics</span>
     </div>
 </div>
 
@@ -201,8 +226,8 @@
     <div class="dept-wrap">
 
         <div class="dept-title-bar">
-            <div class="dept-icon">💻</div>
-            <h1>Department of Computer Science</h1>
+            <div class="dept-icon">📈</div>
+            <h1>Department of Economics</h1>
         </div>
 
         <div class="dept-grid">
@@ -214,15 +239,14 @@
                     <div class="dept-card-hdr">Introduction</div>
                     <div class="dept-card-body">
                         <div class="intro-img-row">
-                            {{-- <img class="intro-img" src="{{ asset('images/cs-dept.jpg') }}" alt="CS Department"> --}}
-                            <div class="intro-img-placeholder">💻</div>
+                            <div class="intro-img-placeholder">💰📊</div>
                             <div class="intro-text">
-                                <p>Welcome to the Department of Computer Science at Government Postgraduate College Mansehra!</p>
-                                <p>Our department offers a diverse range of esteemed undergraduate and graduate degree programs in Computer Science. Our curriculum is carefully designed to equip students with both theoretical knowledge and practical skills essential for the modern digital economy.</p>
+                                <p>Welcome to the Department of Economics at Government Postgraduate College Mansehra!</p>
+                                <p>Economics is the social science that studies the production, distribution, and consumption of goods and services. It helps us understand how societies allocate scarce resources to meet unlimited wants and needs, and provides insights into decision-making at individual, firm, and government levels.</p>
                             </div>
                         </div>
                         <div class="intro-text" style="margin-bottom:12px;">
-                            <p>The department boasts a highly qualified faculty of experienced professionals and researchers committed to academic excellence. State-of-the-art computer labs, high-speed internet, and a dedicated research environment provide students with cutting-edge tools to innovate and excel.</p>
+                            <p>The department offers comprehensive programs in Economics with emphasis on both theoretical frameworks and applied quantitative methods. Our curriculum covers Microeconomics, Macroeconomics, Econometrics, Development Economics, International Trade, and Public Finance. The qualified faculty specializes in various fields including Monetary Economics, Labor Economics, Agricultural Economics, and Financial Economics.</p>
                         </div>
                         <a href="#" class="btn-read-more">READ MORE</a>
                     </div>
@@ -231,10 +255,9 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">Department Gallery</div>
                     <div class="dept-card-body" style="padding:10px;">
-                        {{-- <img class="intro-gallery-img" src="{{ asset('images/cs-event.jpg') }}" alt="CS Event"> --}}
                         <div class="intro-gallery-placeholder">
-                            <div class="gal-icon">🏛️</div>
-                            <div class="gal-text">Computing Society — GPGCM</div>
+                            <div class="gal-icon">🏦</div>
+                            <div class="gal-text">Economics Seminar — GPGCM Mansehra</div>
                         </div>
                     </div>
                 </div>
@@ -242,14 +265,14 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">HOD's Message</div>
                     <div class="hod-card">
-                        <div class="hod-photo-placeholder">👤</div>
+                        <div class="hod-photo-placeholder">👨‍🏫</div>
                         <div>
                             <div class="hod-text">
-                                It is my pleasure to welcome you to the Department of Computer Science at Government Postgraduate College Mansehra. Our department is committed to fostering a culture of innovation, critical thinking, and academic excellence...
+                                Economics provides the tools to understand and address some of the most pressing challenges facing our society today — from poverty and inequality to unemployment and inflation. At the Department of Economics, GPGC Mansehra, we prepare students to analyze complex economic issues and contribute meaningfully to policy-making and development...
                                 <a href="#" style="color:#0066cc;font-weight:600;text-decoration:none;">Read More</a>
                             </div>
-                            <div class="hod-name">Prof. Dr. [HOD Name]</div>
-                            <div class="hod-designation">Head of Department, Computer Science</div>
+                            <div class="hod-name">Prof. Dr. Shahid Hussain</div>
+                            <div class="hod-designation">Head of Department, Economics</div>
                         </div>
                     </div>
                 </div>
@@ -267,59 +290,63 @@
                             <div class="news-scroll-inner">
                                 <ul class="news-list">
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">National Conference on Economic Development &amp; Policy 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">28 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Workshop on Econometrics Using STATA and EViews</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">22 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Economics Department Launches Research Cell for Policy Analysis</a>
                                         <span class="new-tag">New</span>
+                                        <span class="news-date">15 Apr 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Guest Lecture on Pakistan's Economic Challenges &amp; Opportunities</a>
+                                        <span class="news-date">30 Mar 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Inter-Collegiate Economics Quiz Competition 2025</a>
+                                        <span class="news-date">25 Mar 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Seminar on "Role of State Bank in Economic Stability"</a>
                                         <span class="news-date">15 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">MoU Signed with State Bank of Pakistan for Research Collaboration</a>
+                                        <span class="news-date">20 Jan 2025</span>
                                     </li>
                                     {{-- Duplicate for seamless loop --}}
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">National Conference on Economic Development &amp; Policy 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">28 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Workshop on Econometrics Using STATA and EViews</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">22 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Economics Department Launches Research Cell for Policy Analysis</a>
                                         <span class="new-tag">New</span>
+                                        <span class="news-date">15 Apr 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Guest Lecture on Pakistan's Economic Challenges &amp; Opportunities</a>
+                                        <span class="news-date">30 Mar 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Inter-Collegiate Economics Quiz Competition 2025</a>
+                                        <span class="news-date">25 Mar 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Seminar on "Role of State Bank in Economic Stability"</a>
                                         <span class="news-date">15 Feb 2025</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
                                     </li>
                                 </ul>
                             </div>
@@ -336,14 +363,16 @@
                                 <tr><th>#</th><th>Program</th><th>Level</th><th>Duration</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td><a href="#">BS Computer Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>2</td><td><a href="#">BS Software Engineering</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>3</td><td><a href="#">BS Artificial Intelligence</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>4</td><td><a href="#">BS Data Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>5</td><td><a href="#">BS Cyber Security</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>6</td><td><a href="#">Masters (Computer Science)</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>7</td><td><a href="#">MS Computer Science</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>8</td><td><a href="#">Ph.D Computer Science</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>1</td><td><a href="#">BS Economics</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>2</td><td><a href="#">BS Economics (Development Economics)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>3</td><td><a href="#">BS Economics (Financial Economics)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>4</td><td><a href="#">BS Economics (Agricultural Economics)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>5</td><td><a href="#">BS Economics &amp; Finance</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>6</td><td><a href="#">M.Sc Economics</a></td><td><span class="prog-badge ms">Master</span></td><td>2 Years</td></tr>
+                                <tr><td>7</td><td><a href="#">M.Phil Economics</a></td><td><span class="prog-badge ms">M.Phil</span></td><td>2 Years</td></tr>
+                                <tr><td>8</td><td><a href="#">MS Economics</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
+                                <tr><td>9</td><td><a href="#">Ph.D Economics</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>10</td><td><a href="#">Certificate in Applied Econometrics</a></td><td><span class="prog-badge bs">Certificate</span></td><td>6 Months</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -355,25 +384,25 @@
                     <div class="dept-card-body">
                         <div class="imp-links-grid">
                             <a href="#">HOD's Message</a>
-                            <a href="#">BS (Artificial Intelligence)</a>
-                            <a href="#">BS (Computer Science)</a>
-                            <a href="#">BS (Data Science)</a>
-                            <a href="#">BS (Software Engineering)</a>
-                            <a href="#">BS (Telecom &amp; Networks)</a>
-                            <a href="#">Masters (Computer Science)</a>
-                            <a href="#">Ph.D Computer Science</a>
-                            <a href="#">MS (Computer Science)</a>
-                            <a href="#">MOUs</a>
-                            <a href="#">Program Offered &amp; Goals</a>
-                            <a href="#">Industry Advisory Board</a>
-                            <a href="#">Industry Linkages</a>
-                            <a href="#">MS-PhD Program Proforma</a>
-                            <a href="#">Laboratories</a>
-                            <a href="#">BS (Cyber Security)</a>
-                            <a href="#">Other Downloads</a>
-                            <a href="#">BS (Robotics &amp; Intelligent Systems)</a>
+                            <a href="#">BS Economics (General)</a>
+                            <a href="#">BS Development Economics</a>
+                            <a href="#">BS Financial Economics</a>
+                            <a href="#">BS Agricultural Economics</a>
+                            <a href="#">BS Economics &amp; Finance</a>
+                            <a href="#">M.Sc Economics</a>
+                            <a href="#">M.Phil Economics</a>
+                            <a href="#">Ph.D Economics</a>
+                            <a href="#">Research Publications</a>
                             <a href="#">Faculty Members</a>
-                            <a href="#">Joint PhD Faculty Pool</a>
+                            <a href="#">Research Areas</a>
+                            <a href="#">Seminar Schedule</a>
+                            <a href="#">Economics Society</a>
+                            <a href="#">Policy Research Cell</a>
+                            <a href="#">Econometrics Lab</a>
+                            <a href="#">Downloads (Course Materials)</a>
+                            <a href="#">Research Collaborations</a>
+                            <a href="#">Alumni Network</a>
+                            <a href="#">Working Papers Series</a>
                         </div>
                     </div>
                 </div>
@@ -388,18 +417,22 @@
                     <div class="dept-card-body">
                         <ul class="news-list">
                             <li>
-                                <a href="#">Mid-Term Examination Schedule — Spring 2026</a>
+                                <a href="#">Research Grant Applications for Economics Students</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">10 Apr 2026</span>
+                                <span class="news-date">25 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Project Submission Deadline Extended for Final Year Students</a>
+                                <a href="#">Summer Internship at State Bank of Pakistan</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">05 Apr 2026</span>
+                                <span class="news-date">18 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Fee Submission Schedule for Spring Semester 2026</a>
-                                <span class="news-date">01 Mar 2026</span>
+                                <a href="#">Econometrics Workshop Registration Open</a>
+                                <span class="news-date">10 Apr 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Scholarship for Economics Students Announced</a>
+                                <span class="news-date">28 Mar 2025</span>
                             </li>
                         </ul>
                     </div>
@@ -409,13 +442,15 @@
                     <div class="sq-hdr">📌 Quick Access</div>
                     <ul>
                         <li><a href="#">Faculty Members</a></li>
-                        <li><a href="#">Lab Schedule</a></li>
+                        <li><a href="#">Class Schedule</a></li>
                         <li><a href="#">Date Sheet</a></li>
                         <li><a href="#">Admissions</a></li>
                         <li><a href="#">Fee Structure</a></li>
                         <li><a href="#">Research Projects</a></li>
-                        <li><a href="#">Industry Linkages</a></li>
+                        <li><a href="#">Econometrics Software</a></li>
                         <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Economic Data Portal</a></li>
+                        <li><a href="#">Timetable</a></li>
                     </ul>
                 </div>
 
@@ -424,19 +459,77 @@
                     <ul>
                         <li><strong>HOD Office:</strong></li>
                         <li style="padding-left:8px;">📞 0997-XXXXXXX</li>
-                        <li style="padding-left:8px;">📧 cs@gpgcmansehra.edu.pk</li>
+                        <li style="padding-left:8px;">📧 economics@gpgcmansehra.edu.pk</li>
                         <li><strong>Location:</strong></li>
-                        <li style="padding-left:8px;">CS Block, GPGC Mansehra,<br>Mansehra, KPK, Pakistan</li>
+                        <li style="padding-left:8px;">Economics Block (Social Sciences Wing),<br>GPGC Mansehra, KPK, Pakistan</li>
                         <li><strong>Office Hours:</strong></li>
                         <li style="padding-left:8px;">Mon–Sat: 8:00 AM – 4:00 PM</li>
+                        <li><strong>Econometrics Lab:</strong></li>
+                        <li style="padding-left:8px;">📞 0997-XXXXXX Ext: 312</li>
                     </ul>
                 </div>
 
                 <div class="dept-card">
-                    <div class="dept-card-hdr">Accreditation</div>
+                    <div class="dept-card-hdr">Accreditation &amp; Recognition</div>
                     <div class="dept-card-body" style="font-size:13px;color:#444;line-height:1.65;">
                         <p>All programs are recognized and approved by the <strong>Higher Education Commission (HEC) of Pakistan</strong>.</p>
-                        <p style="margin-top:8px;">The department is continuously working towards achieving <strong>NCEAC accreditation</strong>.</p>
+                        <p style="margin-top:8px;">The department maintains strong collaboration with:</p>
+                        <ul style="margin-top:5px;margin-left:20px;color:#555;">
+                            <li>State Bank of Pakistan (SBP)</li>
+                            <li>Pakistan Institute of Development Economics (PIDE)</li>
+                            <li>Ministry of Finance, Government of Pakistan</li>
+                            <li>Pakistan Bureau of Statistics (PBS)</li>
+                            <li>International Growth Centre (IGC)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">📊 Economics Research Areas</div>
+                    <div class="dept-card-body">
+                        <div class="imp-links-grid" style="grid-template-columns: 1fr;">
+                            <a href="#">📈 Development Economics</a>
+                            <a href="#">💰 Monetary Economics</a>
+                            <a href="#">🏦 Financial Economics</a>
+                            <a href="#">🌾 Agricultural Economics</a>
+                            <a href="#">👥 Labor Economics</a>
+                            <a href="#">🌍 International Trade</a>
+                            <a href="#">📉 Econometrics</a>
+                            <a href="#">🏛️ Public Finance</a>
+                            <a href="#">📊 Microeconomics</a>
+                            <a href="#">📈 Macroeconomics</a>
+                            <a href="#">🏠 Urban &amp; Regional Economics</a>
+                            <a href="#">🌿 Environmental Economics</a>
+                            <a href="#">⚕️ Health Economics</a>
+                            <a href="#">📚 Islamic Economics</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">💻 Econometrics Software Lab</div>
+                    <div class="dept-card-body" style="font-size:12.5px;color:#555;line-height:1.6;">
+                        <p>🟢 <strong>STATA:</strong> Data analysis and statistical modeling</p>
+                        <p>🟡 <strong>EViews:</strong> Time series econometrics</p>
+                        <p>🔵 <strong>SPSS:</strong> Statistical analysis for social sciences</p>
+                        <p>🟣 <strong>R Programming:</strong> Advanced econometric analysis</p>
+                        <p>🟠 <strong>Python:</strong> Data science for economics</p>
+                        <p style="margin-top:8px;background:#f0f5ff;padding:8px;border-radius:4px;">
+                            <strong>📊 Economic Data Lab:</strong> Access to World Bank, IMF, SBP, and PBS datasets for research.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">🏦 Career Opportunities</div>
+                    <div class="dept-card-body" style="font-size:12px;color:#555;line-height:1.6;">
+                        <p>✓ <strong>Banking &amp; Financial Services</strong></p>
+                        <p>✓ <strong>Government Economic Advisory</strong></p>
+                        <p>✓ <strong>Research &amp; Policy Analysis</strong></p>
+                        <p>✓ <strong>International Organizations (IMF, World Bank, UNDP)</strong></p>
+                        <p>✓ <strong>Corporate Sector &amp; Business Consulting</strong></p>
+                        <p>✓ <strong>Academia &amp; Teaching</strong></p>
+                        <p>✓ <strong>Development Sector &amp; NGOs</strong></p>
                     </div>
                 </div>
 

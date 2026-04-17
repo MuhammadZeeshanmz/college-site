@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Department of Computer Science — Government Postgraduate College Mansehra')
+@section('title', 'Department of Information Technology — Government Postgraduate College Mansehra')
 
 @push('styles')
 <style>
@@ -172,6 +172,34 @@
 .sidebar-contact ul li { font-size: 12.5px; color: #444; display: flex; gap: 8px; align-items: flex-start; }
 .sidebar-contact ul li strong { color: #002855; }
 
+/* IT-specific styling */
+.it-highlight {
+    background: #e8f0fe;
+    padding: 8px;
+    border-left: 3px solid #e67e22;
+    margin: 10px 0;
+    font-size: 12px;
+}
+.it-tech-badge {
+    display: inline-block;
+    background: #e67e22;
+    color: white;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+.cert-badge {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
 /* Responsive */
 @media (max-width: 1024px) { .dept-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) {
@@ -193,7 +221,7 @@
         <span>›</span>
         <a href="#">Sciences</a>
         <span>›</span>
-        <span style="color:#fff;">Department of Computer Science</span>
+        <span style="color:#fff;">Department of Information Technology</span>
     </div>
 </div>
 
@@ -202,7 +230,7 @@
 
         <div class="dept-title-bar">
             <div class="dept-icon">💻</div>
-            <h1>Department of Computer Science</h1>
+            <h1>Department of Information Technology</h1>
         </div>
 
         <div class="dept-grid">
@@ -214,15 +242,14 @@
                     <div class="dept-card-hdr">Introduction</div>
                     <div class="dept-card-body">
                         <div class="intro-img-row">
-                            {{-- <img class="intro-img" src="{{ asset('images/cs-dept.jpg') }}" alt="CS Department"> --}}
-                            <div class="intro-img-placeholder">💻</div>
+                            <div class="intro-img-placeholder">🖥️🌐</div>
                             <div class="intro-text">
-                                <p>Welcome to the Department of Computer Science at Government Postgraduate College Mansehra!</p>
-                                <p>Our department offers a diverse range of esteemed undergraduate and graduate degree programs in Computer Science. Our curriculum is carefully designed to equip students with both theoretical knowledge and practical skills essential for the modern digital economy.</p>
+                                <p>Welcome to the Department of Information Technology at Government Postgraduate College Mansehra!</p>
+                                <p>Information Technology is the backbone of the digital age, encompassing the use of computers, networks, software, and systems to store, process, transmit, and retrieve information. Our department is dedicated to producing IT professionals who can drive digital innovation and transformation across all sectors.</p>
                             </div>
                         </div>
                         <div class="intro-text" style="margin-bottom:12px;">
-                            <p>The department boasts a highly qualified faculty of experienced professionals and researchers committed to academic excellence. State-of-the-art computer labs, high-speed internet, and a dedicated research environment provide students with cutting-edge tools to innovate and excel.</p>
+                            <p>The department features state-of-the-art computer labs equipped with high-performance workstations, servers, networking equipment, and industry-standard software. Our Cisco Networking Academy provides hands-on training in network configuration and security. The qualified faculty specializes in areas including Network Administration, Web Development, Database Management, Cybersecurity, and Cloud Computing.</p>
                         </div>
                         <a href="#" class="btn-read-more">READ MORE</a>
                     </div>
@@ -231,10 +258,9 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">Department Gallery</div>
                     <div class="dept-card-body" style="padding:10px;">
-                        {{-- <img class="intro-gallery-img" src="{{ asset('images/cs-event.jpg') }}" alt="CS Event"> --}}
                         <div class="intro-gallery-placeholder">
-                            <div class="gal-icon">🏛️</div>
-                            <div class="gal-text">Computing Society — GPGCM</div>
+                            <div class="gal-icon">🖧</div>
+                            <div class="gal-text">IT Labs &amp; Cisco Academy — GPGCM Mansehra</div>
                         </div>
                     </div>
                 </div>
@@ -242,14 +268,14 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">HOD's Message</div>
                     <div class="hod-card">
-                        <div class="hod-photo-placeholder">👤</div>
+                        <div class="hod-photo-placeholder">👨‍💻</div>
                         <div>
                             <div class="hod-text">
-                                It is my pleasure to welcome you to the Department of Computer Science at Government Postgraduate College Mansehra. Our department is committed to fostering a culture of innovation, critical thinking, and academic excellence...
+                                The digital revolution has transformed every aspect of our lives, and Information Technology is at the heart of this transformation. At the Department of Information Technology, GPGC Mansehra, we prepare students to become leaders in the IT industry, equipped with cutting-edge skills in programming, networking, cybersecurity, and emerging technologies...
                                 <a href="#" style="color:#0066cc;font-weight:600;text-decoration:none;">Read More</a>
                             </div>
-                            <div class="hod-name">Prof. Dr. [HOD Name]</div>
-                            <div class="hod-designation">Head of Department, Computer Science</div>
+                            <div class="hod-name">Prof. Dr. Naveed Anjum</div>
+                            <div class="hod-designation">Head of Department, Information Technology</div>
                         </div>
                     </div>
                 </div>
@@ -267,59 +293,63 @@
                             <div class="news-scroll-inner">
                                 <ul class="news-list">
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">International Conference on Emerging IT Trends 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">30 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Cisco Certified Network Associate (CCNA) Training Program</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">22 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">IT Department Launches Cybersecurity Research Center</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">15 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Hackathon 2025 — 24-Hour Coding Competition</a>
+                                        <span class="news-date">28 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
+                                        <a href="#">Workshop on Cloud Computing (AWS &amp; Azure)</a>
+                                        <span class="news-date">20 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">Guest Lecture on Artificial Intelligence &amp; Machine Learning</a>
+                                        <span class="news-date">10 Feb 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">MoU Signed with Leading Software House for Internships</a>
+                                        <span class="news-date">25 Jan 2025</span>
                                     </li>
                                     {{-- Duplicate for seamless loop --}}
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">International Conference on Emerging IT Trends 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">30 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Cisco Certified Network Associate (CCNA) Training Program</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">22 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">IT Department Launches Cybersecurity Research Center</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">15 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Hackathon 2025 — 24-Hour Coding Competition</a>
+                                        <span class="news-date">28 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
+                                        <a href="#">Workshop on Cloud Computing (AWS &amp; Azure)</a>
+                                        <span class="news-date">20 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">Guest Lecture on Artificial Intelligence &amp; Machine Learning</a>
+                                        <span class="news-date">10 Feb 2025</span>
                                     </li>
                                 </ul>
                             </div>
@@ -336,14 +366,18 @@
                                 <tr><th>#</th><th>Program</th><th>Level</th><th>Duration</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td><a href="#">BS Computer Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>2</td><td><a href="#">BS Software Engineering</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>3</td><td><a href="#">BS Artificial Intelligence</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>4</td><td><a href="#">BS Data Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>5</td><td><a href="#">BS Cyber Security</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>6</td><td><a href="#">Masters (Computer Science)</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>7</td><td><a href="#">MS Computer Science</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>8</td><td><a href="#">Ph.D Computer Science</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>1</td><td><a href="#">BS Information Technology</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>2</td><td><a href="#">BS IT (Network Administration)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>3</td><td><a href="#">BS IT (Web Development)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>4</td><td><a href="#">BS IT (Database Management)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>5</td><td><a href="#">BS Cybersecurity</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>6</td><td><a href="#">BS Cloud Computing</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>7</td><td><a href="#">M.Sc Information Technology</a></td><td><span class="prog-badge ms">Master</span></td><td>2 Years</td></tr>
+                                <tr><td>8</td><td><a href="#">M.Phil IT</a></td><td><span class="prog-badge ms">M.Phil</span></td><td>2 Years</td></tr>
+                                <tr><td>9</td><td><a href="#">MS Information Technology</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
+                                <tr><td>10</td><td><a href="#">Ph.D Information Technology</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>11</td><td><a href="#">Certificate in CCNA</a></td><td><span class="prog-badge bs">Certificate</span></td><td>6 Months</td></tr>
+                                <tr><td>12</td><td><a href="#">Certificate in Web Development</a></td><td><span class="prog-badge bs">Certificate</span></td><td>3 Months</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -355,25 +389,27 @@
                     <div class="dept-card-body">
                         <div class="imp-links-grid">
                             <a href="#">HOD's Message</a>
-                            <a href="#">BS (Artificial Intelligence)</a>
-                            <a href="#">BS (Computer Science)</a>
-                            <a href="#">BS (Data Science)</a>
-                            <a href="#">BS (Software Engineering)</a>
-                            <a href="#">BS (Telecom &amp; Networks)</a>
-                            <a href="#">Masters (Computer Science)</a>
-                            <a href="#">Ph.D Computer Science</a>
-                            <a href="#">MS (Computer Science)</a>
-                            <a href="#">MOUs</a>
-                            <a href="#">Program Offered &amp; Goals</a>
-                            <a href="#">Industry Advisory Board</a>
-                            <a href="#">Industry Linkages</a>
-                            <a href="#">MS-PhD Program Proforma</a>
-                            <a href="#">Laboratories</a>
-                            <a href="#">BS (Cyber Security)</a>
-                            <a href="#">Other Downloads</a>
-                            <a href="#">BS (Robotics &amp; Intelligent Systems)</a>
+                            <a href="#">BS Information Technology</a>
+                            <a href="#">BS Network Administration</a>
+                            <a href="#">BS Web Development</a>
+                            <a href="#">BS Database Management</a>
+                            <a href="#">BS Cybersecurity</a>
+                            <a href="#">BS Cloud Computing</a>
+                            <a href="#">M.Sc IT</a>
+                            <a href="#">M.Phil IT</a>
+                            <a href="#">Ph.D IT</a>
+                            <a href="#">Cisco Networking Academy</a>
+                            <a href="#">Research Publications</a>
                             <a href="#">Faculty Members</a>
-                            <a href="#">Joint PhD Faculty Pool</a>
+                            <a href="#">Research Areas</a>
+                            <a href="#">Seminar Schedule</a>
+                            <a href="#">IT Society</a>
+                            <a href="#">Programming Club</a>
+                            <a href="#">Cybersecurity Club</a>
+                            <a href="#">Downloads (Course Materials)</a>
+                            <a href="#">Research Collaborations</a>
+                            <a href="#">Alumni Network</a>
+                            <a href="#">Industry Partners</a>
                         </div>
                     </div>
                 </div>
@@ -388,18 +424,26 @@
                     <div class="dept-card-body">
                         <ul class="news-list">
                             <li>
-                                <a href="#">Mid-Term Examination Schedule — Spring 2026</a>
+                                <a href="#">CCNA Certification Exam Registration Open</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">10 Apr 2026</span>
+                                <span class="news-date">25 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Project Submission Deadline Extended for Final Year Students</a>
+                                <a href="#">Summer Internship Program at Tech Companies</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">05 Apr 2026</span>
+                                <span class="news-date">18 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Fee Submission Schedule for Spring Semester 2026</a>
-                                <span class="news-date">01 Mar 2026</span>
+                                <a href="#">Free Workshop on Python Programming</a>
+                                <span class="news-date">10 Apr 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Scholarship for IT Students Announced</a>
+                                <span class="news-date">30 Mar 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Career Fair 2025 — Top IT Companies</a>
+                                <span class="news-date">20 Mar 2025</span>
                             </li>
                         </ul>
                     </div>
@@ -414,8 +458,11 @@
                         <li><a href="#">Admissions</a></li>
                         <li><a href="#">Fee Structure</a></li>
                         <li><a href="#">Research Projects</a></li>
-                        <li><a href="#">Industry Linkages</a></li>
+                        <li><a href="#">Programming Resources</a></li>
                         <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Lab Booking</a></li>
+                        <li><a href="#">Timetable</a></li>
+                        <li><a href="#">Certification Programs</a></li>
                     </ul>
                 </div>
 
@@ -424,19 +471,76 @@
                     <ul>
                         <li><strong>HOD Office:</strong></li>
                         <li style="padding-left:8px;">📞 0997-XXXXXXX</li>
-                        <li style="padding-left:8px;">📧 cs@gpgcmansehra.edu.pk</li>
+                        <li style="padding-left:8px;">📧 it@gpgcmansehra.edu.pk</li>
                         <li><strong>Location:</strong></li>
-                        <li style="padding-left:8px;">CS Block, GPGC Mansehra,<br>Mansehra, KPK, Pakistan</li>
+                        <li style="padding-left:8px;">IT Block (Science Wing),<br>GPGC Mansehra, KPK, Pakistan</li>
                         <li><strong>Office Hours:</strong></li>
                         <li style="padding-left:8px;">Mon–Sat: 8:00 AM – 4:00 PM</li>
+                        <li><strong>IT Labs:</strong></li>
+                        <li style="padding-left:8px;">📞 0997-XXXXXX Ext: 310</li>
+                        <li style="padding-left:8px;">💻 4 Modern Labs with 200+ Workstations</li>
                     </ul>
                 </div>
 
                 <div class="dept-card">
-                    <div class="dept-card-hdr">Accreditation</div>
+                    <div class="dept-card-hdr">Accreditation &amp; Recognition</div>
                     <div class="dept-card-body" style="font-size:13px;color:#444;line-height:1.65;">
                         <p>All programs are recognized and approved by the <strong>Higher Education Commission (HEC) of Pakistan</strong>.</p>
-                        <p style="margin-top:8px;">The department is continuously working towards achieving <strong>NCEAC accreditation</strong>.</p>
+                        <p style="margin-top:8px;">The department maintains strong collaboration with:</p>
+                        <ul style="margin-top:5px;margin-left:20px;color:#555;">
+                            <li>Cisco Networking Academy</li>
+                            <li>Microsoft Learn for Educators</li>
+                            <li>Amazon Web Services (AWS) Academy</li>
+                            <li>Pakistan Software Export Board (PSEB)</li>
+                            <li>Leading Software Houses &amp; IT Companies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">💻 IT Research Areas</div>
+                    <div class="dept-card-body">
+                        <div class="imp-links-grid" style="grid-template-columns: 1fr;">
+                            <a href="#">🔒 Cybersecurity &amp; Network Security</a>
+                            <a href="#">☁️ Cloud Computing</a>
+                            <a href="#">📊 Big Data Analytics</a>
+                            <a href="#">🤖 Artificial Intelligence</a>
+                            <a href="#">🧠 Machine Learning</a>
+                            <a href="#">🌐 Internet of Things (IoT)</a>
+                            <a href="#">📱 Mobile Application Development</a>
+                            <a href="#">💻 Web Development</a>
+                            <a href="#">🗄️ Database Systems</a>
+                            <a href="#">🖧 Network Administration</a>
+                            <a href="#">🔗 Blockchain Technology</a>
+                            <a href="#">🎮 Game Development</a>
+                            <a href="#">📈 IT Project Management</a>
+                            <a href="#">🔍 Information Systems</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">🎓 Certification Programs</div>
+                    <div class="dept-card-body" style="font-size:12.5px;color:#555;line-height:1.6;">
+                        <p>🟢 <strong>CCNA (Cisco Certified Network Associate):</strong> Networking Fundamentals</p>
+                        <p>🟡 <strong>Web Development:</strong> HTML, CSS, JavaScript, PHP, Laravel</p>
+                        <p>🔵 <strong>Python Programming:</strong> Data Science &amp; Automation</p>
+                        <p>🟣 <strong>Cybersecurity:</strong> Ethical Hacking &amp; Security</p>
+                        <p>🟠 <strong>Cloud Computing:</strong> AWS &amp; Azure Fundamentals</p>
+                        <p style="margin-top:8px;background:#f0f5ff;padding:8px;border-radius:4px;">
+                            <strong>🎯 Industry Partnerships:</strong> Regular workshops, guest lectures, and internship opportunities with leading IT companies.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">🖧 IT Labs &amp; Facilities</div>
+                    <div class="dept-card-body" style="font-size:12.5px;color:#555;line-height:1.6;">
+                        <p>💻 <strong>Lab 1:</strong> Programming &amp; Development Lab (50 Workstations)</p>
+                        <p>🖧 <strong>Lab 2:</strong> Networking &amp; Cisco Lab (Routing/Switching Equipment)</p>
+                        <p>🔒 <strong>Lab 3:</strong> Cybersecurity Lab (Penetration Testing Environment)</p>
+                        <p>☁️ <strong>Lab 4:</strong> Cloud Computing Lab (Virtualization Servers)</p>
+                        <p style="margin-top:8px;"><strong>📡 High-Speed Internet:</strong> 100 Mbps dedicated fiber optic connection</p>
                     </div>
                 </div>
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Department of Computer Science — Government Postgraduate College Mansehra')
+@section('title', 'Department of Mathematics — Government Postgraduate College Mansehra')
 
 @push('styles')
 <style>
@@ -172,6 +172,19 @@
 .sidebar-contact ul li { font-size: 12.5px; color: #444; display: flex; gap: 8px; align-items: flex-start; }
 .sidebar-contact ul li strong { color: #002855; }
 
+/* Math-specific styling */
+.math-symbol {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+}
+.math-highlight {
+    background: #f0f5ff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 12px;
+}
+
 /* Responsive */
 @media (max-width: 1024px) { .dept-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) {
@@ -193,7 +206,7 @@
         <span>›</span>
         <a href="#">Sciences</a>
         <span>›</span>
-        <span style="color:#fff;">Department of Computer Science</span>
+        <span style="color:#fff;">Department of Mathematics</span>
     </div>
 </div>
 
@@ -201,8 +214,8 @@
     <div class="dept-wrap">
 
         <div class="dept-title-bar">
-            <div class="dept-icon">💻</div>
-            <h1>Department of Computer Science</h1>
+            <div class="dept-icon">📐</div>
+            <h1>Department of Mathematics</h1>
         </div>
 
         <div class="dept-grid">
@@ -214,15 +227,14 @@
                     <div class="dept-card-hdr">Introduction</div>
                     <div class="dept-card-body">
                         <div class="intro-img-row">
-                            {{-- <img class="intro-img" src="{{ asset('images/cs-dept.jpg') }}" alt="CS Department"> --}}
-                            <div class="intro-img-placeholder">💻</div>
+                            <div class="intro-img-placeholder">∫📐</div>
                             <div class="intro-text">
-                                <p>Welcome to the Department of Computer Science at Government Postgraduate College Mansehra!</p>
-                                <p>Our department offers a diverse range of esteemed undergraduate and graduate degree programs in Computer Science. Our curriculum is carefully designed to equip students with both theoretical knowledge and practical skills essential for the modern digital economy.</p>
+                                <p>Welcome to the Department of Mathematics at Government Postgraduate College Mansehra!</p>
+                                <p>Mathematics is the language of science, technology, and innovation. Our department is dedicated to fostering analytical thinking, problem-solving skills, and mathematical reasoning among students. We offer comprehensive programs that blend pure and applied mathematics to prepare students for diverse career paths.</p>
                             </div>
                         </div>
                         <div class="intro-text" style="margin-bottom:12px;">
-                            <p>The department boasts a highly qualified faculty of experienced professionals and researchers committed to academic excellence. State-of-the-art computer labs, high-speed internet, and a dedicated research environment provide students with cutting-edge tools to innovate and excel.</p>
+                            <p>The department is equipped with highly qualified faculty members who specialize in various branches of mathematics including Algebra, Analysis, Topology, Numerical Analysis, and Applied Mathematics. Our modern mathematics lab and computational facilities provide students with hands-on experience in mathematical modeling and simulations.</p>
                         </div>
                         <a href="#" class="btn-read-more">READ MORE</a>
                     </div>
@@ -231,10 +243,9 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">Department Gallery</div>
                     <div class="dept-card-body" style="padding:10px;">
-                        {{-- <img class="intro-gallery-img" src="{{ asset('images/cs-event.jpg') }}" alt="CS Event"> --}}
                         <div class="intro-gallery-placeholder">
-                            <div class="gal-icon">🏛️</div>
-                            <div class="gal-text">Computing Society — GPGCM</div>
+                            <div class="gal-icon">📊</div>
+                            <div class="gal-text">Mathematics Symposium — GPGCM</div>
                         </div>
                     </div>
                 </div>
@@ -242,14 +253,14 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">HOD's Message</div>
                     <div class="hod-card">
-                        <div class="hod-photo-placeholder">👤</div>
+                        <div class="hod-photo-placeholder">👨‍🏫</div>
                         <div>
                             <div class="hod-text">
-                                It is my pleasure to welcome you to the Department of Computer Science at Government Postgraduate College Mansehra. Our department is committed to fostering a culture of innovation, critical thinking, and academic excellence...
+                                Mathematics is not just a subject; it's a way of thinking that opens doors to infinite possibilities. At the Department of Mathematics, GPGC Mansehra, we strive to create an environment where students develop a deep appreciation for mathematical concepts and their real-world applications...
                                 <a href="#" style="color:#0066cc;font-weight:600;text-decoration:none;">Read More</a>
                             </div>
-                            <div class="hod-name">Prof. Dr. [HOD Name]</div>
-                            <div class="hod-designation">Head of Department, Computer Science</div>
+                            <div class="hod-name">Prof. Dr. Muhammad Aslam</div>
+                            <div class="hod-designation">Head of Department, Mathematics</div>
                         </div>
                     </div>
                 </div>
@@ -267,59 +278,59 @@
                             <div class="news-scroll-inner">
                                 <ul class="news-list">
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">International Mathematics Olympiad Training Camp 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">15 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">National Mathematics Conference 2025 at GPGCM</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">05 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Workshop on Mathematical Modeling Using MATLAB</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">20 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Mathematics Department Secures HEC Research Grant</a>
+                                        <span class="news-date">10 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
+                                        <a href="#">Inter-Collegiate Mathematics Quiz Competition 2025</a>
+                                        <span class="news-date">25 Jan 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Guest Lecture on Applications of Calculus in Engineering</a>
                                         <span class="news-date">05 Dec 2024</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
                                     </li>
                                     {{-- Duplicate for seamless loop --}}
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">International Mathematics Olympiad Training Camp 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">15 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">National Mathematics Conference 2025 at GPGCM</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">05 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Workshop on Mathematical Modeling Using MATLAB</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">20 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Mathematics Department Secures HEC Research Grant</a>
+                                        <span class="news-date">10 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
+                                        <a href="#">Inter-Collegiate Mathematics Quiz Competition 2025</a>
+                                        <span class="news-date">25 Jan 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Guest Lecture on Applications of Calculus in Engineering</a>
                                         <span class="news-date">05 Dec 2024</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
                                     </li>
                                 </ul>
                             </div>
@@ -336,14 +347,14 @@
                                 <tr><th>#</th><th>Program</th><th>Level</th><th>Duration</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td><a href="#">BS Computer Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>2</td><td><a href="#">BS Software Engineering</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>3</td><td><a href="#">BS Artificial Intelligence</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>4</td><td><a href="#">BS Data Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>5</td><td><a href="#">BS Cyber Security</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>6</td><td><a href="#">Masters (Computer Science)</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>7</td><td><a href="#">MS Computer Science</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>8</td><td><a href="#">Ph.D Computer Science</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>1</td><td><a href="#">BS Mathematics</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>2</td><td><a href="#">BS Mathematics (Applied)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>3</td><td><a href="#">BS Mathematics (Pure)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>4</td><td><a href="#">BS Mathematics with Statistics</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>5</td><td><a href="#">M.Sc Mathematics</a></td><td><span class="prog-badge ms">Master</span></td><td>2 Years</td></tr>
+                                <tr><td>6</td><td><a href="#">M.Phil Mathematics</a></td><td><span class="prog-badge ms">M.Phil</span></td><td>2 Years</td></tr>
+                                <tr><td>7</td><td><a href="#">MS Mathematics</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
+                                <tr><td>8</td><td><a href="#">Ph.D Mathematics</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -355,25 +366,25 @@
                     <div class="dept-card-body">
                         <div class="imp-links-grid">
                             <a href="#">HOD's Message</a>
-                            <a href="#">BS (Artificial Intelligence)</a>
-                            <a href="#">BS (Computer Science)</a>
-                            <a href="#">BS (Data Science)</a>
-                            <a href="#">BS (Software Engineering)</a>
-                            <a href="#">BS (Telecom &amp; Networks)</a>
-                            <a href="#">Masters (Computer Science)</a>
-                            <a href="#">Ph.D Computer Science</a>
-                            <a href="#">MS (Computer Science)</a>
-                            <a href="#">MOUs</a>
-                            <a href="#">Program Offered &amp; Goals</a>
-                            <a href="#">Industry Advisory Board</a>
-                            <a href="#">Industry Linkages</a>
-                            <a href="#">MS-PhD Program Proforma</a>
-                            <a href="#">Laboratories</a>
-                            <a href="#">BS (Cyber Security)</a>
-                            <a href="#">Other Downloads</a>
-                            <a href="#">BS (Robotics &amp; Intelligent Systems)</a>
+                            <a href="#">BS (Pure Mathematics)</a>
+                            <a href="#">BS (Applied Mathematics)</a>
+                            <a href="#">BS (Mathematics &amp; Statistics)</a>
+                            <a href="#">M.Sc Mathematics</a>
+                            <a href="#">M.Phil Mathematics</a>
+                            <a href="#">MS Mathematics</a>
+                            <a href="#">Ph.D Mathematics</a>
+                            <a href="#">Course Outlines</a>
+                            <a href="#">Research Publications</a>
+                            <a href="#">Mathematics Lab</a>
                             <a href="#">Faculty Members</a>
-                            <a href="#">Joint PhD Faculty Pool</a>
+                            <a href="#">Research Areas</a>
+                            <a href="#">Seminar Schedule</a>
+                            <a href="#">Mathematics Society</a>
+                            <a href="#">Olympiad Training</a>
+                            <a href="#">Downloads (Past Papers)</a>
+                            <a href="#">Collaborations</a>
+                            <a href="#">Alumni Network</a>
+                            <a href="#">Research Journals</a>
                         </div>
                     </div>
                 </div>
@@ -388,18 +399,22 @@
                     <div class="dept-card-body">
                         <ul class="news-list">
                             <li>
-                                <a href="#">Mid-Term Examination Schedule — Spring 2026</a>
+                                <a href="#">Mathematics Olympiad Registration Open</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">10 Apr 2026</span>
+                                <span class="news-date">12 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Project Submission Deadline Extended for Final Year Students</a>
+                                <a href="#">Mid-Term Examination Schedule — Spring 2025</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">05 Apr 2026</span>
+                                <span class="news-date">08 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Fee Submission Schedule for Spring Semester 2026</a>
-                                <span class="news-date">01 Mar 2026</span>
+                                <a href="#">Research Symposium on Pure &amp; Applied Mathematics</a>
+                                <span class="news-date">25 Mar 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Scholarship Announcement for Meritorious Students</a>
+                                <span class="news-date">10 Mar 2025</span>
                             </li>
                         </ul>
                     </div>
@@ -409,13 +424,15 @@
                     <div class="sq-hdr">📌 Quick Access</div>
                     <ul>
                         <li><a href="#">Faculty Members</a></li>
-                        <li><a href="#">Lab Schedule</a></li>
+                        <li><a href="#">Class Schedule</a></li>
                         <li><a href="#">Date Sheet</a></li>
                         <li><a href="#">Admissions</a></li>
                         <li><a href="#">Fee Structure</a></li>
                         <li><a href="#">Research Projects</a></li>
-                        <li><a href="#">Industry Linkages</a></li>
+                        <li><a href="#">Mathematics Lab</a></li>
                         <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Online Resources</a></li>
+                        <li><a href="#">Tutor Schedule</a></li>
                     </ul>
                 </div>
 
@@ -424,19 +441,36 @@
                     <ul>
                         <li><strong>HOD Office:</strong></li>
                         <li style="padding-left:8px;">📞 0997-XXXXXXX</li>
-                        <li style="padding-left:8px;">📧 cs@gpgcmansehra.edu.pk</li>
+                        <li style="padding-left:8px;">📧 math@gpgcmansehra.edu.pk</li>
                         <li><strong>Location:</strong></li>
-                        <li style="padding-left:8px;">CS Block, GPGC Mansehra,<br>Mansehra, KPK, Pakistan</li>
+                        <li style="padding-left:8px;">Mathematics Block, GPGC Mansehra,<br>Mansehra, KPK, Pakistan</li>
                         <li><strong>Office Hours:</strong></li>
                         <li style="padding-left:8px;">Mon–Sat: 8:00 AM – 4:00 PM</li>
+                        <li><strong>Math Lab:</strong></li>
+                        <li style="padding-left:8px;">📞 0997-XXXXXX Ext: 204</li>
                     </ul>
                 </div>
 
                 <div class="dept-card">
-                    <div class="dept-card-hdr">Accreditation</div>
+                    <div class="dept-card-hdr">Accreditation &amp; Recognition</div>
                     <div class="dept-card-body" style="font-size:13px;color:#444;line-height:1.65;">
                         <p>All programs are recognized and approved by the <strong>Higher Education Commission (HEC) of Pakistan</strong>.</p>
-                        <p style="margin-top:8px;">The department is continuously working towards achieving <strong>NCEAC accreditation</strong>.</p>
+                        <p style="margin-top:8px;">The department is actively working towards <strong>NCEAC accreditation</strong> and maintains strong links with <strong>National Mathematics Council</strong>.</p>
+                        <p style="margin-top:8px;"><strong>Research Collaborations:</strong> University of Peshawar, COMSATS, and NUST.</p>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">📚 Quick Math Resources</div>
+                    <div class="dept-card-body">
+                        <div class="imp-links-grid" style="grid-template-columns: 1fr;">
+                            <a href="#">📖 Online Calculus Tutorials</a>
+                            <a href="#">📊 Linear Algebra Notes</a>
+                            <a href="#">📐 Differential Equations Guide</a>
+                            <a href="#">📈 Statistics Reference</a>
+                            <a href="#">💻 MATLAB Tutorials</a>
+                            <a href="#">📝 Past Papers Repository</a>
+                        </div>
                     </div>
                 </div>
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Department of Computer Science — Government Postgraduate College Mansehra')
+@section('title', 'Department of Physics — Government Postgraduate College Mansehra')
 
 @push('styles')
 <style>
@@ -172,6 +172,19 @@
 .sidebar-contact ul li { font-size: 12.5px; color: #444; display: flex; gap: 8px; align-items: flex-start; }
 .sidebar-contact ul li strong { color: #002855; }
 
+/* Physics-specific styling */
+.physics-formula {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    background: #f0f5ff;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+.physics-lab-icon {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
 /* Responsive */
 @media (max-width: 1024px) { .dept-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) {
@@ -193,7 +206,7 @@
         <span>›</span>
         <a href="#">Sciences</a>
         <span>›</span>
-        <span style="color:#fff;">Department of Computer Science</span>
+        <span style="color:#fff;">Department of Physics</span>
     </div>
 </div>
 
@@ -201,8 +214,8 @@
     <div class="dept-wrap">
 
         <div class="dept-title-bar">
-            <div class="dept-icon">💻</div>
-            <h1>Department of Computer Science</h1>
+            <div class="dept-icon">⚛️</div>
+            <h1>Department of Physics</h1>
         </div>
 
         <div class="dept-grid">
@@ -214,15 +227,14 @@
                     <div class="dept-card-hdr">Introduction</div>
                     <div class="dept-card-body">
                         <div class="intro-img-row">
-                            {{-- <img class="intro-img" src="{{ asset('images/cs-dept.jpg') }}" alt="CS Department"> --}}
-                            <div class="intro-img-placeholder">💻</div>
+                            <div class="intro-img-placeholder">⚛️🔬</div>
                             <div class="intro-text">
-                                <p>Welcome to the Department of Computer Science at Government Postgraduate College Mansehra!</p>
-                                <p>Our department offers a diverse range of esteemed undergraduate and graduate degree programs in Computer Science. Our curriculum is carefully designed to equip students with both theoretical knowledge and practical skills essential for the modern digital economy.</p>
+                                <p>Welcome to the Department of Physics at Government Postgraduate College Mansehra!</p>
+                                <p>Physics is the fundamental science that explores the laws of nature, from the smallest subatomic particles to the vast expanses of the universe. Our department is committed to providing quality education in physics, fostering scientific inquiry, experimental skills, and analytical thinking.</p>
                             </div>
                         </div>
                         <div class="intro-text" style="margin-bottom:12px;">
-                            <p>The department boasts a highly qualified faculty of experienced professionals and researchers committed to academic excellence. State-of-the-art computer labs, high-speed internet, and a dedicated research environment provide students with cutting-edge tools to innovate and excel.</p>
+                            <p>The department features state-of-the-art physics laboratories equipped with modern instruments for experiments in Mechanics, Optics, Electricity & Magnetism, Modern Physics, and Electronics. Our dedicated faculty members specialize in various fields including Quantum Mechanics, Solid State Physics, Nuclear Physics, and Astrophysics.</p>
                         </div>
                         <a href="#" class="btn-read-more">READ MORE</a>
                     </div>
@@ -231,10 +243,9 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">Department Gallery</div>
                     <div class="dept-card-body" style="padding:10px;">
-                        {{-- <img class="intro-gallery-img" src="{{ asset('images/cs-event.jpg') }}" alt="CS Event"> --}}
                         <div class="intro-gallery-placeholder">
-                            <div class="gal-icon">🏛️</div>
-                            <div class="gal-text">Computing Society — GPGCM</div>
+                            <div class="gal-icon">🔬</div>
+                            <div class="gal-text">Physics Lab — GPGCM Mansehra</div>
                         </div>
                     </div>
                 </div>
@@ -242,14 +253,14 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">HOD's Message</div>
                     <div class="hod-card">
-                        <div class="hod-photo-placeholder">👤</div>
+                        <div class="hod-photo-placeholder">👨‍🔬</div>
                         <div>
                             <div class="hod-text">
-                                It is my pleasure to welcome you to the Department of Computer Science at Government Postgraduate College Mansehra. Our department is committed to fostering a culture of innovation, critical thinking, and academic excellence...
+                                Physics is the most fundamental of all sciences, and studying it develops a unique perspective on how the universe works. At the Department of Physics, GPGC Mansehra, we focus on creating a stimulating learning environment where students can explore the wonders of physics through hands-on experiments and theoretical understanding...
                                 <a href="#" style="color:#0066cc;font-weight:600;text-decoration:none;">Read More</a>
                             </div>
-                            <div class="hod-name">Prof. Dr. [HOD Name]</div>
-                            <div class="hod-designation">Head of Department, Computer Science</div>
+                            <div class="hod-name">Prof. Dr. Khalid Mahmood</div>
+                            <div class="hod-designation">Head of Department, Physics</div>
                         </div>
                     </div>
                 </div>
@@ -267,59 +278,63 @@
                             <div class="news-scroll-inner">
                                 <ul class="news-list">
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">National Physics Symposium 2025 at GPGCM</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">18 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Workshop on Quantum Computing Fundamentals</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">10 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Physics Department Receives Research Equipment Grant from HEC</a>
                                         <span class="new-tag">New</span>
+                                        <span class="news-date">25 Mar 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">International Astronomy Observation Night</a>
                                         <span class="news-date">15 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Inter-Collegiate Physics Olympiad 2025</a>
+                                        <span class="news-date">30 Jan 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
+                                        <a href="#">Guest Lecture on Semiconductor Physics and Applications</a>
+                                        <span class="news-date">10 Dec 2024</span>
                                     </li>
                                     <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
+                                        <a href="#">Physics Department Industrial Visit to Hydropower Project</a>
                                         <span class="news-date">20 Nov 2024</span>
                                     </li>
                                     {{-- Duplicate for seamless loop --}}
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">National Physics Symposium 2025 at GPGCM</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">18 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Workshop on Quantum Computing Fundamentals</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">10 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Physics Department Receives Research Equipment Grant from HEC</a>
                                         <span class="new-tag">New</span>
+                                        <span class="news-date">25 Mar 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">International Astronomy Observation Night</a>
                                         <span class="news-date">15 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Inter-Collegiate Physics Olympiad 2025</a>
+                                        <span class="news-date">30 Jan 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">Guest Lecture on Semiconductor Physics and Applications</a>
+                                        <span class="news-date">10 Dec 2024</span>
                                     </li>
                                 </ul>
                             </div>
@@ -336,14 +351,15 @@
                                 <tr><th>#</th><th>Program</th><th>Level</th><th>Duration</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td><a href="#">BS Computer Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>2</td><td><a href="#">BS Software Engineering</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>3</td><td><a href="#">BS Artificial Intelligence</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>4</td><td><a href="#">BS Data Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>5</td><td><a href="#">BS Cyber Security</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>6</td><td><a href="#">Masters (Computer Science)</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>7</td><td><a href="#">MS Computer Science</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>8</td><td><a href="#">Ph.D Computer Science</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>1</td><td><a href="#">BS Physics</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>2</td><td><a href="#">BS Physics (Electronics)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>3</td><td><a href="#">BS Physics (Computational)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>4</td><td><a href="#">BS Medical Physics</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>5</td><td><a href="#">M.Sc Physics</a></td><td><span class="prog-badge ms">Master</span></td><td>2 Years</td></tr>
+                                <tr><td>6</td><td><a href="#">M.Phil Physics</a></td><td><span class="prog-badge ms">M.Phil</span></td><td>2 Years</td></tr>
+                                <tr><td>7</td><td><a href="#">MS Physics</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
+                                <tr><td>8</td><td><a href="#">Ph.D Physics</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>9</td><td><a href="#">Diploma in Electronics</a></td><td><span class="prog-badge bs">Diploma</span></td><td>1 Year</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -355,25 +371,25 @@
                     <div class="dept-card-body">
                         <div class="imp-links-grid">
                             <a href="#">HOD's Message</a>
-                            <a href="#">BS (Artificial Intelligence)</a>
-                            <a href="#">BS (Computer Science)</a>
-                            <a href="#">BS (Data Science)</a>
-                            <a href="#">BS (Software Engineering)</a>
-                            <a href="#">BS (Telecom &amp; Networks)</a>
-                            <a href="#">Masters (Computer Science)</a>
-                            <a href="#">Ph.D Computer Science</a>
-                            <a href="#">MS (Computer Science)</a>
-                            <a href="#">MOUs</a>
-                            <a href="#">Program Offered &amp; Goals</a>
-                            <a href="#">Industry Advisory Board</a>
-                            <a href="#">Industry Linkages</a>
-                            <a href="#">MS-PhD Program Proforma</a>
-                            <a href="#">Laboratories</a>
-                            <a href="#">BS (Cyber Security)</a>
-                            <a href="#">Other Downloads</a>
-                            <a href="#">BS (Robotics &amp; Intelligent Systems)</a>
+                            <a href="#">BS Physics (General)</a>
+                            <a href="#">BS Physics (Electronics)</a>
+                            <a href="#">BS Computational Physics</a>
+                            <a href="#">BS Medical Physics</a>
+                            <a href="#">M.Sc Physics</a>
+                            <a href="#">M.Phil Physics</a>
+                            <a href="#">Ph.D Physics</a>
+                            <a href="#">Physics Laboratories</a>
+                            <a href="#">Research Publications</a>
                             <a href="#">Faculty Members</a>
-                            <a href="#">Joint PhD Faculty Pool</a>
+                            <a href="#">Research Areas</a>
+                            <a href="#">Seminar Schedule</a>
+                            <a href="#">Physics Society</a>
+                            <a href="#">Astronomy Club</a>
+                            <a href="#">Equipment Inventory</a>
+                            <a href="#">Downloads (Lab Manuals)</a>
+                            <a href="#">Research Collaborations</a>
+                            <a href="#">Alumni Network</a>
+                            <a href="#">Journal Subscriptions</a>
                         </div>
                     </div>
                 </div>
@@ -388,18 +404,22 @@
                     <div class="dept-card-body">
                         <ul class="news-list">
                             <li>
-                                <a href="#">Mid-Term Examination Schedule — Spring 2026</a>
+                                <a href="#">Physics Lab Practical Exams Schedule — Spring 2025</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">10 Apr 2026</span>
+                                <span class="news-date">14 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Project Submission Deadline Extended for Final Year Students</a>
+                                <a href="#">Research Proposal Submission Deadline Extended</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">05 Apr 2026</span>
+                                <span class="news-date">05 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Fee Submission Schedule for Spring Semester 2026</a>
-                                <span class="news-date">01 Mar 2026</span>
+                                <a href="#">Summer Internship Program at PAEC</a>
+                                <span class="news-date">28 Mar 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Scholarship for Physics Students Announced</a>
+                                <span class="news-date">15 Mar 2025</span>
                             </li>
                         </ul>
                     </div>
@@ -414,8 +434,10 @@
                         <li><a href="#">Admissions</a></li>
                         <li><a href="#">Fee Structure</a></li>
                         <li><a href="#">Research Projects</a></li>
-                        <li><a href="#">Industry Linkages</a></li>
+                        <li><a href="#">Physics Lab Manuals</a></li>
                         <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Equipment Booking</a></li>
+                        <li><a href="#">Timetable</a></li>
                     </ul>
                 </div>
 
@@ -424,19 +446,43 @@
                     <ul>
                         <li><strong>HOD Office:</strong></li>
                         <li style="padding-left:8px;">📞 0997-XXXXXXX</li>
-                        <li style="padding-left:8px;">📧 cs@gpgcmansehra.edu.pk</li>
+                        <li style="padding-left:8px;">📧 physics@gpgcmansehra.edu.pk</li>
                         <li><strong>Location:</strong></li>
-                        <li style="padding-left:8px;">CS Block, GPGC Mansehra,<br>Mansehra, KPK, Pakistan</li>
+                        <li style="padding-left:8px;">Physics Block (Science Wing),<br>GPGC Mansehra, KPK, Pakistan</li>
                         <li><strong>Office Hours:</strong></li>
                         <li style="padding-left:8px;">Mon–Sat: 8:00 AM – 4:00 PM</li>
+                        <li><strong>Physics Labs:</strong></li>
+                        <li style="padding-left:8px;">📞 0997-XXXXXX Ext: 305</li>
+                        <li style="padding-left:8px;">🔬 Mechanics, Electronics, Modern Physics Labs</li>
                     </ul>
                 </div>
 
                 <div class="dept-card">
-                    <div class="dept-card-hdr">Accreditation</div>
+                    <div class="dept-card-hdr">Accreditation &amp; Recognition</div>
                     <div class="dept-card-body" style="font-size:13px;color:#444;line-height:1.65;">
                         <p>All programs are recognized and approved by the <strong>Higher Education Commission (HEC) of Pakistan</strong>.</p>
-                        <p style="margin-top:8px;">The department is continuously working towards achieving <strong>NCEAC accreditation</strong>.</p>
+                        <p style="margin-top:8px;">The department maintains strong collaboration with:</p>
+                        <ul style="margin-top:5px;margin-left:20px;color:#555;">
+                            <li>Pakistan Atomic Energy Commission (PAEC)</li>
+                            <li>National Center for Physics (NCP)</li>
+                            <li>Pakistan Space &amp; Upper Atmosphere Research Commission (SUPARCO)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">⚛️ Physics Research Areas</div>
+                    <div class="dept-card-body">
+                        <div class="imp-links-grid" style="grid-template-columns: 1fr;">
+                            <a href="#">🔬 Condensed Matter Physics</a>
+                            <a href="#">⚛️ Quantum Mechanics</a>
+                            <a href="#">🌌 Astrophysics &amp; Cosmology</a>
+                            <a href="#">💻 Computational Physics</a>
+                            <a href="#">🔋 Renewable Energy Physics</a>
+                            <a href="#">📡 Semiconductor Physics</a>
+                            <a href="#">🧬 Medical Physics</a>
+                            <a href="#">🌊 Plasma Physics</a>
+                        </div>
                     </div>
                 </div>
 

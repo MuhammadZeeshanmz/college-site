@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Department of Computer Science — Government Postgraduate College Mansehra')
+@section('title', 'Department of Statistics — Government Postgraduate College Mansehra')
 
 @push('styles')
 <style>
@@ -172,6 +172,31 @@
 .sidebar-contact ul li { font-size: 12.5px; color: #444; display: flex; gap: 8px; align-items: flex-start; }
 .sidebar-contact ul li strong { color: #002855; }
 
+/* Statistics-specific styling */
+.stat-formula {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    background: #f0f5ff;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+.stat-software {
+    display: inline-block;
+    background: #1a6e85;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+.stat-highlight {
+    background: #e8f0fe;
+    padding: 8px;
+    border-left: 3px solid #0066cc;
+    margin: 10px 0;
+    font-size: 12px;
+}
+
 /* Responsive */
 @media (max-width: 1024px) { .dept-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 768px) {
@@ -193,7 +218,7 @@
         <span>›</span>
         <a href="#">Sciences</a>
         <span>›</span>
-        <span style="color:#fff;">Department of Computer Science</span>
+        <span style="color:#fff;">Department of Statistics</span>
     </div>
 </div>
 
@@ -201,8 +226,8 @@
     <div class="dept-wrap">
 
         <div class="dept-title-bar">
-            <div class="dept-icon">💻</div>
-            <h1>Department of Computer Science</h1>
+            <div class="dept-icon">📊</div>
+            <h1>Department of Statistics</h1>
         </div>
 
         <div class="dept-grid">
@@ -214,15 +239,14 @@
                     <div class="dept-card-hdr">Introduction</div>
                     <div class="dept-card-body">
                         <div class="intro-img-row">
-                            {{-- <img class="intro-img" src="{{ asset('images/cs-dept.jpg') }}" alt="CS Department"> --}}
-                            <div class="intro-img-placeholder">💻</div>
+                            <div class="intro-img-placeholder">📈📊</div>
                             <div class="intro-text">
-                                <p>Welcome to the Department of Computer Science at Government Postgraduate College Mansehra!</p>
-                                <p>Our department offers a diverse range of esteemed undergraduate and graduate degree programs in Computer Science. Our curriculum is carefully designed to equip students with both theoretical knowledge and practical skills essential for the modern digital economy.</p>
+                                <p>Welcome to the Department of Statistics at Government Postgraduate College Mansehra!</p>
+                                <p>Statistics is the science of learning from data, encompassing collection, analysis, interpretation, presentation, and organization of data. In today's data-driven world, statistical expertise is crucial for decision-making in business, government, healthcare, research, and technology.</p>
                             </div>
                         </div>
                         <div class="intro-text" style="margin-bottom:12px;">
-                            <p>The department boasts a highly qualified faculty of experienced professionals and researchers committed to academic excellence. State-of-the-art computer labs, high-speed internet, and a dedicated research environment provide students with cutting-edge tools to innovate and excel.</p>
+                            <p>The department offers comprehensive programs in Statistics with emphasis on both theoretical foundations and practical applications. Our state-of-the-art computer lab is equipped with industry-standard statistical software including SPSS, R, Python, SAS, and Minitab. Our qualified faculty specializes in areas including Applied Statistics, Econometrics, Biostatistics, and Data Science.</p>
                         </div>
                         <a href="#" class="btn-read-more">READ MORE</a>
                     </div>
@@ -231,10 +255,9 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">Department Gallery</div>
                     <div class="dept-card-body" style="padding:10px;">
-                        {{-- <img class="intro-gallery-img" src="{{ asset('images/cs-event.jpg') }}" alt="CS Event"> --}}
                         <div class="intro-gallery-placeholder">
-                            <div class="gal-icon">🏛️</div>
-                            <div class="gal-text">Computing Society — GPGCM</div>
+                            <div class="gal-icon">💻</div>
+                            <div class="gal-text">Statistics Computer Lab — GPGCM Mansehra</div>
                         </div>
                     </div>
                 </div>
@@ -242,14 +265,14 @@
                 <div class="dept-card">
                     <div class="dept-card-hdr">HOD's Message</div>
                     <div class="hod-card">
-                        <div class="hod-photo-placeholder">👤</div>
+                        <div class="hod-photo-placeholder">👩‍🏫</div>
                         <div>
                             <div class="hod-text">
-                                It is my pleasure to welcome you to the Department of Computer Science at Government Postgraduate College Mansehra. Our department is committed to fostering a culture of innovation, critical thinking, and academic excellence...
+                                In the age of big data and artificial intelligence, statistical literacy has become more important than ever. At the Department of Statistics, GPGC Mansehra, we prepare students to become data-driven problem solvers who can extract meaningful insights from complex data and make informed decisions...
                                 <a href="#" style="color:#0066cc;font-weight:600;text-decoration:none;">Read More</a>
                             </div>
-                            <div class="hod-name">Prof. Dr. [HOD Name]</div>
-                            <div class="hod-designation">Head of Department, Computer Science</div>
+                            <div class="hod-name">Prof. Dr. Saima Rashid</div>
+                            <div class="hod-designation">Head of Department, Statistics</div>
                         </div>
                     </div>
                 </div>
@@ -267,59 +290,63 @@
                             <div class="news-scroll-inner">
                                 <ul class="news-list">
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">National Conference on Data Science &amp; Statistics 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">22 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Workshop on Machine Learning Using Python and R</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">15 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Statistics Department Launches Data Analytics Certificate Program</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">05 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Collaboration with Pakistan Bureau of Statistics for Research Projects</a>
+                                        <span class="news-date">20 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
+                                        <a href="#">Inter-University Statistical Olympiad 2025</a>
+                                        <span class="news-date">25 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">Guest Lecture on Time Series Analysis and Forecasting</a>
+                                        <span class="news-date">10 Feb 2025</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">Survey Methodology Training Workshop</a>
+                                        <span class="news-date">15 Jan 2025</span>
                                     </li>
                                     {{-- Duplicate for seamless loop --}}
                                     <li>
-                                        <a href="#">Science Students Seminar on Artificial Intelligence and Machine Learning</a>
+                                        <a href="#">National Conference on Data Science &amp; Statistics 2025</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">16 Apr 2025</span>
+                                        <span class="news-date">22 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">FES Pakistan visits Department of Computer Science, GPGCM</a>
+                                        <a href="#">Workshop on Machine Learning Using Python and R</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">03 Mar 2025</span>
+                                        <span class="news-date">15 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Department of Computer Science Welcomes its Fresh Batch of BS Students</a>
+                                        <a href="#">Statistics Department Launches Data Analytics Certificate Program</a>
                                         <span class="new-tag">New</span>
-                                        <span class="news-date">15 Feb 2025</span>
+                                        <span class="news-date">05 Apr 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Programming Competition 2025 — Inter-Departmental Coding Challenge</a>
-                                        <span class="news-date">10 Jan 2025</span>
+                                        <a href="#">Collaboration with Pakistan Bureau of Statistics for Research Projects</a>
+                                        <span class="news-date">20 Mar 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">Workshop on Cybersecurity Awareness for Students and Faculty</a>
-                                        <span class="news-date">05 Dec 2024</span>
+                                        <a href="#">Inter-University Statistical Olympiad 2025</a>
+                                        <span class="news-date">25 Feb 2025</span>
                                     </li>
                                     <li>
-                                        <a href="#">CS Department Signs MOU with Leading IT Company for Internship Opportunities</a>
-                                        <span class="news-date">20 Nov 2024</span>
+                                        <a href="#">Guest Lecture on Time Series Analysis and Forecasting</a>
+                                        <span class="news-date">10 Feb 2025</span>
                                     </li>
                                 </ul>
                             </div>
@@ -336,14 +363,16 @@
                                 <tr><th>#</th><th>Program</th><th>Level</th><th>Duration</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td><a href="#">BS Computer Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>2</td><td><a href="#">BS Software Engineering</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>3</td><td><a href="#">BS Artificial Intelligence</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>4</td><td><a href="#">BS Data Science</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>5</td><td><a href="#">BS Cyber Security</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
-                                <tr><td>6</td><td><a href="#">Masters (Computer Science)</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>7</td><td><a href="#">MS Computer Science</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
-                                <tr><td>8</td><td><a href="#">Ph.D Computer Science</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>1</td><td><a href="#">BS Statistics</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>2</td><td><a href="#">BS Statistics (Data Science)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>3</td><td><a href="#">BS Statistics (Econometrics)</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>4</td><td><a href="#">BS Statistics with Demography</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>5</td><td><a href="#">BS Actuarial Sciences</a></td><td><span class="prog-badge bs">BS</span></td><td>4 Years</td></tr>
+                                <tr><td>6</td><td><a href="#">M.Sc Statistics</a></td><td><span class="prog-badge ms">Master</span></td><td>2 Years</td></tr>
+                                <tr><td>7</td><td><a href="#">M.Phil Statistics</a></td><td><span class="prog-badge ms">M.Phil</span></td><td>2 Years</td></tr>
+                                <tr><td>8</td><td><a href="#">MS Statistics</a></td><td><span class="prog-badge ms">MS</span></td><td>2 Years</td></tr>
+                                <tr><td>9</td><td><a href="#">Ph.D Statistics</a></td><td><span class="prog-badge phd">PhD</span></td><td>3–5 Years</td></tr>
+                                <tr><td>10</td><td><a href="#">Certificate in Data Analytics</a></td><td><span class="prog-badge bs">Certificate</span></td><td>6 Months</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -355,25 +384,25 @@
                     <div class="dept-card-body">
                         <div class="imp-links-grid">
                             <a href="#">HOD's Message</a>
-                            <a href="#">BS (Artificial Intelligence)</a>
-                            <a href="#">BS (Computer Science)</a>
-                            <a href="#">BS (Data Science)</a>
-                            <a href="#">BS (Software Engineering)</a>
-                            <a href="#">BS (Telecom &amp; Networks)</a>
-                            <a href="#">Masters (Computer Science)</a>
-                            <a href="#">Ph.D Computer Science</a>
-                            <a href="#">MS (Computer Science)</a>
-                            <a href="#">MOUs</a>
-                            <a href="#">Program Offered &amp; Goals</a>
-                            <a href="#">Industry Advisory Board</a>
-                            <a href="#">Industry Linkages</a>
-                            <a href="#">MS-PhD Program Proforma</a>
-                            <a href="#">Laboratories</a>
-                            <a href="#">BS (Cyber Security)</a>
-                            <a href="#">Other Downloads</a>
-                            <a href="#">BS (Robotics &amp; Intelligent Systems)</a>
+                            <a href="#">BS Statistics (General)</a>
+                            <a href="#">BS Data Science</a>
+                            <a href="#">BS Econometrics</a>
+                            <a href="#">BS Actuarial Sciences</a>
+                            <a href="#">M.Sc Statistics</a>
+                            <a href="#">M.Phil Statistics</a>
+                            <a href="#">Ph.D Statistics</a>
+                            <a href="#">Statistical Software Lab</a>
+                            <a href="#">Research Publications</a>
                             <a href="#">Faculty Members</a>
-                            <a href="#">Joint PhD Faculty Pool</a>
+                            <a href="#">Research Areas</a>
+                            <a href="#">Seminar Schedule</a>
+                            <a href="#">Statistics Society</a>
+                            <a href="#">Data Analytics Club</a>
+                            <a href="#">Survey Research Center</a>
+                            <a href="#">Downloads (Course Materials)</a>
+                            <a href="#">Research Collaborations</a>
+                            <a href="#">Alumni Network</a>
+                            <a href="#">Consultancy Services</a>
                         </div>
                     </div>
                 </div>
@@ -388,18 +417,26 @@
                     <div class="dept-card-body">
                         <ul class="news-list">
                             <li>
-                                <a href="#">Mid-Term Examination Schedule — Spring 2026</a>
+                                <a href="#">Data Analytics Certification Exam Registration Open</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">10 Apr 2026</span>
+                                <span class="news-date">18 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Project Submission Deadline Extended for Final Year Students</a>
+                                <a href="#">Summer Training Program in SPSS and R</a>
                                 <span class="new-tag">New</span>
-                                <span class="news-date">05 Apr 2026</span>
+                                <span class="news-date">10 Apr 2025</span>
                             </li>
                             <li>
-                                <a href="#">Fee Submission Schedule for Spring Semester 2026</a>
-                                <span class="news-date">01 Mar 2026</span>
+                                <a href="#">Research Proposal Submission for Statistical Consultancy</a>
+                                <span class="news-date">01 Apr 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Internship Opportunities at Federal Bureau of Statistics</a>
+                                <span class="news-date">20 Mar 2025</span>
+                            </li>
+                            <li>
+                                <a href="#">Scholarship for Statistics Students Announced</a>
+                                <span class="news-date">10 Mar 2025</span>
                             </li>
                         </ul>
                     </div>
@@ -409,13 +446,16 @@
                     <div class="sq-hdr">📌 Quick Access</div>
                     <ul>
                         <li><a href="#">Faculty Members</a></li>
-                        <li><a href="#">Lab Schedule</a></li>
+                        <li><a href="#">Software Lab Schedule</a></li>
                         <li><a href="#">Date Sheet</a></li>
                         <li><a href="#">Admissions</a></li>
                         <li><a href="#">Fee Structure</a></li>
                         <li><a href="#">Research Projects</a></li>
-                        <li><a href="#">Industry Linkages</a></li>
+                        <li><a href="#">Statistical Software</a></li>
                         <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Data Repository</a></li>
+                        <li><a href="#">Timetable</a></li>
+                        <li><a href="#">Consultancy Request</a></li>
                     </ul>
                 </div>
 
@@ -424,19 +464,65 @@
                     <ul>
                         <li><strong>HOD Office:</strong></li>
                         <li style="padding-left:8px;">📞 0997-XXXXXXX</li>
-                        <li style="padding-left:8px;">📧 cs@gpgcmansehra.edu.pk</li>
+                        <li style="padding-left:8px;">📧 statistics@gpgcmansehra.edu.pk</li>
                         <li><strong>Location:</strong></li>
-                        <li style="padding-left:8px;">CS Block, GPGC Mansehra,<br>Mansehra, KPK, Pakistan</li>
+                        <li style="padding-left:8px;">Statistics Block (Science Wing),<br>GPGC Mansehra, KPK, Pakistan</li>
                         <li><strong>Office Hours:</strong></li>
                         <li style="padding-left:8px;">Mon–Sat: 8:00 AM – 4:00 PM</li>
+                        <li><strong>Computer Lab:</strong></li>
+                        <li style="padding-left:8px;">📞 0997-XXXXXX Ext: 307</li>
+                        <li style="padding-left:8px;">💻 Software: SPSS, R, Python, SAS, Minitab</li>
                     </ul>
                 </div>
 
                 <div class="dept-card">
-                    <div class="dept-card-hdr">Accreditation</div>
+                    <div class="dept-card-hdr">Accreditation &amp; Recognition</div>
                     <div class="dept-card-body" style="font-size:13px;color:#444;line-height:1.65;">
                         <p>All programs are recognized and approved by the <strong>Higher Education Commission (HEC) of Pakistan</strong>.</p>
-                        <p style="margin-top:8px;">The department is continuously working towards achieving <strong>NCEAC accreditation</strong>.</p>
+                        <p style="margin-top:8px;">The department maintains strong collaboration with:</p>
+                        <ul style="margin-top:5px;margin-left:20px;color:#555;">
+                            <li>Pakistan Bureau of Statistics (PBS)</li>
+                            <li>Federal Bureau of Statistics</li>
+                            <li>State Bank of Pakistan (Research Wing)</li>
+                            <li>Pakistan Institute of Development Economics (PIDE)</li>
+                            <li>Local Industry &amp; Market Research Firms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">📈 Statistics Research Areas</div>
+                    <div class="dept-card-body">
+                        <div class="imp-links-grid" style="grid-template-columns: 1fr;">
+                            <a href="#">📊 Applied Statistics</a>
+                            <a href="#">📉 Econometrics</a>
+                            <a href="#">🧬 Biostatistics</a>
+                            <a href="#">🤖 Machine Learning</a>
+                            <a href="#">📈 Time Series Analysis</a>
+                            <a href="#">🎲 Probability Theory</a>
+                            <a href="#">📐 Multivariate Analysis</a>
+                            <a href="#">📏 Sampling Techniques</a>
+                            <a href="#">📊 Survey Methodology</a>
+                            <a href="#">💻 Statistical Computing</a>
+                            <a href="#">📉 Bayesian Statistics</a>
+                            <a href="#">📈 Demography</a>
+                            <a href="#">🎯 Quality Control</a>
+                            <a href="#">📊 Big Data Analytics</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dept-card">
+                    <div class="dept-card-hdr">💻 Statistical Software Training</div>
+                    <div class="dept-card-body" style="font-size:12.5px;color:#555;line-height:1.6;">
+                        <p>🟢 <strong>SPSS:</strong> Basic to Advanced Statistical Analysis</p>
+                        <p>🟡 <strong>R Programming:</strong> Statistical Computing and Graphics</p>
+                        <p>🔵 <strong>Python:</strong> Data Science and Machine Learning</p>
+                        <p>🟣 <strong>SAS:</strong> Business Analytics and Reporting</p>
+                        <p>🟠 <strong>Minitab:</strong> Quality Control and Six Sigma</p>
+                        <p style="margin-top:8px;background:#f0f5ff;padding:8px;border-radius:4px;">
+                            <strong>📢 Certificate Courses Available:</strong> Regular workshops and certification programs offered throughout the year.
+                        </p>
                     </div>
                 </div>
 
