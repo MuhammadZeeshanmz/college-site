@@ -217,9 +217,10 @@
             <a href="#"><span class="qi">⬇</span> Downloads</a>
             <a href="#"><span class="qi">📋</span> Tenders</a>
             <a href="{{ route('results') }}"><span class="qi">📊</span> Online Results</a>
-            <a href="#"><span class="qi">📚</span> Central Library</a>
+            <a href="{{ route('library') }}"><span class="qi">📚</span> Central Library</a>
             <a href="#"><span class="qi">💼</span> Jobs &amp; Careers</a>
-            <a href="#"><span class="qi">📜</span> Semester Rules</a>
+            {{-- <a href="{{ route('semester-rules') }}"><span class="qi">📜</span> Semester Rules</a> --}}
+            <a href="{{ route('semester-rules') }}"><span class="qi">📜</span> Semester Rules</a>
          <a href="{{ route('department.show', ['department' => 'cs']) }}">
     <span class="qi">🖥</span> computer science
 </a>
